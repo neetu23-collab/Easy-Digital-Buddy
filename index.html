@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Digital Buddy — Your Everyday Digital Helper</title>
+<meta name="description" content="Easy Digital Buddy - free everyday digital tools, student tools, online safety, earning guides and useful web utilities.">
+<style>
+:root{--bg:#080b12;--panel:#111827;--panel2:#172033;--text:#f4f7fb;--muted:#aab4c5;--accent:#63e6be;--accent2:#7c9cff;--danger:#ff7b8a;--border:#273249;--shadow:0 12px 35px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top right,#17284b 0,#080b12 38%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.5}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.app{min-height:100vh}.topbar{position:sticky;top:0;z-index:10;background:#080b12eF;backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{max-width:1250px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:10px;cursor:pointer;min-width:max-content}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#08101b;display:grid;place-items:center;font-weight:900;font-size:18px;box-shadow:0 8px 25px #63e6be33}.brand strong{display:block}.brand small{color:var(--muted);font-size:11px}.navlinks{display:flex;gap:6px;flex:1;justify-content:center;flex-wrap:wrap}.navlinks button,.ghost{background:transparent;color:var(--muted);padding:8px 10px;border-radius:9px}.navlinks button:hover,.ghost:hover{background:var(--panel2);color:var(--text)}.search{display:flex;gap:8px;min-width:210px}.search input{width:100%;background:var(--panel);border:1px solid var(--border);color:var(--text);border-radius:10px;padding:9px 11px;outline:none}.container{max-width:1250px;margin:auto;padding:28px 18px 60px}.hero{padding:42px 0 30px;display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center}.hero h1{font-size:clamp(34px,6vw,68px);line-height:1.02;margin:10px 0}.hero h1 span{color:var(--accent)}.hero p{font-size:18px;color:var(--muted);max-width:700px}.hero-card{background:linear-gradient(145deg,#17243b,#0e1422);border:1px solid var(--border);border-radius:22px;padding:25px;box-shadow:var(--shadow)}.hero-card .biglogo{font-size:80px;font-weight:900;letter-spacing:-8px;color:var(--accent)}.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:28px 0 14px}.section-title h2{margin:0;font-size:25px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:linear-gradient(145deg,#111827,#0d1420);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 8px 25px #0002}.card:hover{border-color:#45607e;transform:translateY(-2px);transition:.2s}.category-card{cursor:pointer;min-height:145px}.category-card .icon{font-size:28px}.category-card h3{margin:8px 0 4px}.tool-card{cursor:pointer}.tool-card h3{margin:4px 0}.tool-card p{font-size:13px;color:var(--muted);margin:5px 0 12px}.tag{display:inline-block;font-size:11px;color:var(--accent);border:1px solid #63e6be55;padding:3px 7px;border-radius:999px;margin:2px}.btn{background:linear-gradient(135deg,var(--accent),#50b9ff);color:#071019;font-weight:800;padding:10px 14px;border-radius:10px}.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border)}.btn.danger{background:#3b1720;color:#ffb0ba}.btn:disabled{opacity:.5;cursor:not-allowed}.tool-head{display:flex;justify-content:space-between;gap:15px;align-items:start;margin-bottom:18px}.tool-head h1{margin:0 0 5px}.toolbox{max-width:900px;margin:auto}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:var(--muted);font-weight:700}.field input,.field textarea,.field select{width:100%;background:#0b111c;border:1px solid var(--border);color:var(--text);border-radius:10px;padding:10px;outline:none}.field textarea{min-height:140px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.result{margin-top:16px;padding:15px;border-radius:12px;background:#09111d;border:1px solid var(--border);white-space:pre-wrap;overflow-wrap:anywhere}.result.success{border-color:#3e9d7e}.result.error{border-color:#9d3e4d;color:#ffb0ba}.checklist{display:grid;gap:9px}.check{display:flex;gap:8px;align-items:start;padding:10px;background:#0b111c;border:1px solid var(--border);border-radius:9px}.progress{height:9px;background:#202b3d;border-radius:20px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0}.crumb{color:var(--muted);font-size:13px;margin-bottom:15px}.guide{display:grid;gap:12px}.guide article{padding:16px;background:#0d1420;border:1px solid var(--border);border-radius:12px}.guide h3{margin-top:0}.footer{border-top:1px solid var(--border);padding:30px 18px;color:var(--muted);text-align:center}.noresults{text-align:center;padding:35px;color:var(--muted)}.light-mode{--bg:#f4f7fb;--panel:#ffffff;--panel2:#e8eef7;--text:#111827;--muted:#536174;--border:#d4dce8;background:linear-gradient(135deg,#f7fbff,#eaf1f9)}.light-mode .topbar{background:#f4f7fbee}.light-mode .card{background:linear-gradient(145deg,#fff,#f5f8fc)}
+.buddy-strip,.feature-panel{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:20px;padding:18px;margin:18px 0;box-shadow:var(--shadow)}
+.buddy-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,#7c3aed,#06b6d4);color:white;box-shadow:0 8px 20px #0003}
+.buddy-strip span{display:block;color:var(--muted);margin-top:4px;animation:fadeSlide 3s ease-in-out infinite}
+.path-grid,.workflow-grid,.dashboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.workflow-grid{grid-template-columns:repeat(3,1fr)}
+.dashboard-grid{grid-template-columns:repeat(4,1fr)}
+.path-card,.workflow-card{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:18px;padding:18px;text-align:left;cursor:pointer;transition:.25s;display:flex;flex-direction:column;gap:8px}
+.path-card:hover,.workflow-card:hover{transform:translateY(-6px);border-color:#8b5cf6;box-shadow:0 12px 30px #0003}
+.path-card small,.workflow-card span{color:var(--muted)}
+.dashboard-item{padding:16px;border-radius:16px;background:var(--panel2);border:1px solid var(--border)}
+.dashboard-item b{font-size:1.5rem;display:block;margin-bottom:5px}
+.wizard-step{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:14px;margin:8px 0;cursor:pointer}
+.wizard-step:hover{background:var(--panel2)}
+@keyframes fadeSlide{0%,100%{opacity:.45;transform:translateY(3px)}50%{opacity:1;transform:translateY(0)}}
+@keyframes floatIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.card,.path-card,.workflow-card{animation:floatIn .45s ease both}
+
+
+/* Real visual product thumbnails */
+.product-preview{padding:10px!important;overflow:hidden!important}
+.mini-resume{height:100%;display:grid;grid-template-columns:32% 68%;background:#fff;color:#172033;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px #0003}
+.mini-resume-side{background:#172033;color:#fff;padding:12px 9px;display:flex;flex-direction:column;gap:6px}
+.mini-resume-side strong{font-size:14px;line-height:1.05}.mini-resume-side small{font-size:6px;color:#b7c5d8}.mini-resume-side i{height:1px;background:#6ee7d8;margin:7px 0}.mini-resume-side em{font-style:normal;font-size:6px;letter-spacing:1px;color:#6ee7d8}
+.mini-resume-main{padding:14px 12px}.mini-resume-main h4{font-size:19px;margin:0 0 3px}.mini-resume-main span{font-size:6px;color:#64748b}.mini-resume-main hr{border:0;border-top:2px solid #6ee7d8;margin:10px 0}.mini-resume-main b{font-size:7px;letter-spacing:1px}.mini-resume-main p{height:5px;background:#dbe3eb;margin:6px 0;border-radius:3px}
+.mini-business{height:100%;background:linear-gradient(135deg,#f8fffd,#d7f1eb);border-radius:10px;padding:20px;color:#0f766e;position:relative;overflow:hidden}
+.biz-brand{font-size:7px;letter-spacing:2px;font-weight:bold}.mini-business h4{font-size:22px;line-height:1;margin:18px 0}.biz-pill{display:inline-block;background:#0f766e;color:white;padding:6px 10px;border-radius:20px;font-size:7px}.biz-lines{width:65%;height:35px;margin-top:15px;border-top:2px solid #8acdc0;border-bottom:2px solid #8acdc0;opacity:.7}.biz-offer{position:absolute;right:15px;bottom:15px;background:#0f766e;color:#fff;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:bold;transform:rotate(-8deg)}
+.mini-study{height:100%;background:#fff;border-radius:10px;padding:15px;color:#4338a8}.study-top{font-size:9px;letter-spacing:2px;line-height:1.1}.study-top strong{font-size:22px}.study-goal{margin:14px 0;background:#eeeafd;border-radius:8px;padding:8px;font-size:8px;font-weight:bold}.study-week{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.study-week i{font-style:normal;border:1px solid #c9c4ed;border-radius:5px;padding:8px 2px;text-align:center;font-size:6px}.study-note{margin-top:12px;border:1px solid #c9c4ed;border-radius:8px;padding:9px;font-size:8px}
+.store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.product-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:14px;box-shadow:var(--shadow);transition:.25s}
+.product-card:hover{transform:translateY(-5px)}
+.product-preview{height:170px;border-radius:15px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:#fff;overflow:hidden;position:relative}
+.product-preview:after{content:"";position:absolute;width:140px;height:140px;border:1px solid #ffffff55;border-radius:50%;right:-35px;top:-30px;box-shadow:0 0 0 20px #ffffff12,0 0 0 40px #ffffff08}
+.resume-preview{background:linear-gradient(135deg,#1e293b,#334155)}
+.business-preview{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.study-preview{background:linear-gradient(135deg,#4338ca,#7c3aed)}
+.product-preview span{font-size:.75rem;letter-spacing:2px;opacity:.8}
+.product-preview b{font-size:1.4rem;line-height:1.1}
+.product-preview small{opacity:.8}
+.preview-label{font-size:.72rem;color:#6ee7d8;display:block;margin-top:4px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px}
+.price-row>b{font-size:1.4rem}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.service-card{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:18px;padding:18px;text-align:left;cursor:pointer;transition:.25s;font-size:1.1rem}
+.service-card:hover{transform:translateY(-5px);border-color:#8b5cf6}
+.service-card small{display:block;color:var(--muted);font-size:.85rem;margin-top:8px}
+
+
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:100;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.modal-box{position:relative;width:min(760px,100%);max-height:90vh;overflow:auto;background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:0 20px 70px #0008}
+.modal-close{position:absolute;right:14px;top:14px;border:0;background:var(--panel2);color:var(--text);border-radius:10px;padding:8px;cursor:pointer}
+
+.real-preview{display:block;background:#eef2f7;border-radius:16px;padding:10px;margin-bottom:18px;height:420px;overflow:hidden}
+.real-preview iframe{width:100%;height:100%;border:0;border-radius:10px;background:#fff}
+@media(max-width:600px){.real-preview{height:360px}.modal-box{padding:16px}}
+.product-detail-preview{height:180px;border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:#fff;margin-bottom:18px}
+.product-detail-preview b{font-size:1.7rem;line-height:1.1}
+.product-detail-preview span{font-size:.75rem;letter-spacing:2px;opacity:.8}
+.product-buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.product-buy strong{font-size:1.8rem}
+.modal-box li{margin:8px 0}
+.tiny{font-size:.8rem;margin-top:14px}
+.floating-wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;text-decoration:none;font-size:26px;box-shadow:0 8px 25px #0005;z-index:50;transition:.25s}
+.floating-wa:hover{transform:scale(1.1)}
+@media(max-width:850px){.store-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,1fr)}.path-grid,.dashboard-grid{grid-template-columns:repeat(2,1fr)}.workflow-grid{grid-template-columns:1fr}.buddy-strip{align-items:flex-start}.nav{flex-wrap:wrap}.navlinks{order:3;flex-basis:100%;overflow:auto;justify-content:flex-start}.search{flex:1}.hero{grid-template-columns:1fr}.hero-card{display:none}}@media(max-width:600px){.container{padding:18px 12px 45px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.brand small{display:none}.nav{padding:9px 10px}.navlinks button{font-size:12px}.search{min-width:140px}.hero{padding-top:25px}.hero p{font-size:16px}.section-title{align-items:start;flex-direction:column}.tool-head{flex-direction:column}.btn{width:auto}}
+
+/* ===== EDB UNIQUE EXPERIENCE LAYER ===== */
+#edbProgress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#6ee7d8,#60a5fa,#a78bfa);z-index:9999}
+#edbToast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#111827;color:#fff;border:1px solid #ffffff22;border-radius:14px;padding:12px 18px;z-index:10000;transition:.3s;box-shadow:0 12px 30px #0005}
+#edbToast.show{opacity:1;transform:translate(-50%,0)}
+#edbCommand{display:none;position:fixed;inset:0;background:#0009;z-index:9998;align-items:flex-start;justify-content:center;padding:10vh 16px}
+#edbCommand.show{display:flex}
+.edb-command-box{width:min(680px,100%);background:var(--panel);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 20px 80px #0008}
+.edb-command-box input{width:100%;padding:20px;border:0;border-bottom:1px solid var(--border);background:transparent;color:var(--text);font-size:18px;outline:0}
+#edbCommandResults{max-height:55vh;overflow:auto}
+.edb-command-item{display:flex;align-items:center;gap:12px;padding:15px 20px;cursor:pointer;border-bottom:1px solid var(--border)}
+.edb-command-item:hover{background:var(--panel2)}
+.edb-command-item small{display:block;color:var(--muted)}
+.edb-shortcut{font-size:11px;color:var(--muted);padding:3px 7px;border:1px solid var(--border);border-radius:6px}
+.edb-live-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:99px;background:#10b98118;color:#34d399;font-size:12px}
+.edb-live-badge i{width:7px;height:7px;border-radius:50%;background:#34d399;animation:edbPulse 1.5s infinite}
+@keyframes edbPulse{50%{opacity:.3;transform:scale(.7)}}
+@keyframes edbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.edb-float{animation:edbFloat 4s ease-in-out infinite}
+.edb-reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+.edb-reveal.visible{opacity:1;transform:none}
+.edb-command-trigger{cursor:pointer}
+</style>
+</head>
+<body>
+<div id="edbProgress"></div>
+<div id="edbToast"></div>
+<div id="edbCommand" onclick="if(event.target===this)closeCommand()">
+  <div class="edb-command-box">
+    <input id="edbCommandInput" placeholder="Search tools, pages and actions…  (Esc to close)" oninput="renderCommandResults(this.value)">
+    <div id="edbCommandResults"></div>
+  </div>
+</div>
+
+
+<div class="edb-marquee" style="overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;margin:20px 0;white-space:nowrap">
+  <div style="display:inline-block;animation:edbMarquee 24s linear infinite;color:var(--muted)">⚡ Free tools • 🎨 Digital templates • 📄 Resume help • 🛡️ Online safety • 💡 Earning guidance • 🌐 Website services • ⚡ Free tools • 🎨 Digital templates •</div>
+</div>
+<style>@keyframes edbMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}</style>
+<div id="app"></div>
+<script>
+'use strict';
+const $=s=>document.querySelector(s);
+const app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+const copyText=async t=>{try{await navigator.clipboard.writeText(t);alert('Copied successfully!')}catch(e){alert('Copy failed. Please copy manually.')}};
+const fmt=n=>Number.isFinite(n)?Number(n.toFixed(8)):n;
+const categories=[
+{id:'ai',name:'AI Tools',icon:'🤖',desc:'Prompt building, writing helpers and AI tool discovery.'},
+{id:'student',name:'Student Tools',icon:'🎓',desc:'Calculators, timers, notes, tasks and study utilities.'},
+{id:'safety',name:'Online Safety',icon:'🛡️',desc:'Password, phishing, privacy and cyber-safety helpers.'},
+{id:'earning',name:'Online Earning',icon:'💼',desc:'Educational roadmaps, estimates and progress tracking.'},
+{id:'mobile',name:'Mobile & Internet',icon:'📱',desc:'Data, speed, QR, color and everyday internet tools.'},
+{id:'web',name:'Useful Web Tools',icon:'🧰',desc:'Text, image, developer, CSS and conversion utilities.'}
+];
+const tools=[
+['prompt-gen','AI Prompt Generator','ai','Create useful prompts from a category and goal.'],
+['prompt-improver','AI Prompt Improver','ai','Local prompt-structuring helper; not real AI.'],
+['writing-helper','AI Writing Helper','ai','Rewrite, summarize, expand or simplify text locally.'],
+['study-prompt','AI Study Prompt Generator','ai','Generate a structured study prompt.'],
+['idea-gen','AI Idea Generator','ai','Generate multiple ideas from a topic.'],
+['ai-directory','AI Tool Directory','ai','Browse AI categories and external resources.'],
+['percentage','Percentage Calculator','student','Calculate marks percentage.'],
+['average','Average Calculator','student','Calculate the average of multiple numbers.'],
+['cgpa','CGPA to Percentage','student','Approximate CGPA conversion.'],
+['increase','Percentage Increase/Decrease','student','Compare original and new values.'],
+['calculator','Simple Calculator','student','Basic decimal calculator.'],
+['age','Age Calculator','student','Calculate exact age from date of birth.'],
+['date-diff','Date Difference','student','Calculate days between dates.'],
+['study-timer','Study Timer','student','Countdown study timer.'],
+['pomodoro','Pomodoro Timer','student','Work and break cycles.'],
+['word-counter','Word Counter','student','Count words, characters and paragraphs.'],
+['notes','Notes Tool','student','Create and save notes in localStorage.'],
+['todo','To-Do List','student','Manage tasks with localStorage.'],
+['password-check','Password Strength Checker','safety','Check password characteristics without storing it.'],
+['password-gen','Password Generator','safety','Generate random passwords locally.'],
+['username','Username Checker','safety','Validate and suggest usernames; no fake availability.'],
+['phishing','Phishing Awareness Checker','safety','Educational warning-pattern checker.'],
+['url-safety','URL Safety Checklist','safety','Basic URL checks, not a security guarantee.'],
+['cyber-check','Cyber Safety Checklist','safety','Track cyber safety actions locally.'],
+['privacy-check','Privacy Checklist','safety','Track account, browser and social privacy actions.'],
+['safety-guide','Password Safety Guide','safety','Learn safe password practices.'],
+['earning-roadmap','Earning Roadmaps','earning','Explore beginner skill-based earning paths.'],
+['income-calc','Income Estimate Calculator','earning','Estimate scenarios only; not guaranteed income.'],
+['time-calc','Time Investment Calculator','earning','Estimate weekly/monthly time investment.'],
+['skill-tracker','Skill Progress Tracker','earning','Track learning progress locally.'],
+['data-calc','Internet Data Calculator','mobile','Estimate data usage.'],
+['download-time','Download Time Calculator','mobile','Estimate download duration.'],
+['data-converter','Data Unit Converter','mobile','Convert bytes, KB, MB, GB and TB.'],
+['speed-converter','Internet Speed Converter','mobile','Convert Mbps, MB/s and Gbps.'],
+['qr-gen','QR Code Generator','mobile','Generate QR codes using a browser library-free SVG fallback.'],
+['qr-reader','QR Code Reader','mobile','Camera permission explanation and image fallback.'],
+['url-shortener','URL Shortener Interface','mobile','Explains why a backend/API is required.'],
+['color-picker','Color Picker','mobile','HEX, RGB and HSL values.'],
+['random-number','Random Number Generator','mobile','Generate a random number in a range.'],
+['random-choice','Random Choice Picker','mobile','Pick a random option.'],
+['case','Case Converter','web','Convert text case.'],
+['cleaner','Text Cleaner','web','Remove extra spaces and blank lines.'],
+['repeater','Text Repeater','web','Repeat text a chosen number of times.'],
+['sorter','Text Sorter','web','Sort and remove duplicates.'],
+['json','JSON Formatter','web','Format and validate JSON.'],
+['base64','Base64 Encoder/Decoder','web','Encode and decode Base64 text.'],
+['url-code','URL Encoder/Decoder','web','Encode and decode URL components.'],
+['html-entity','HTML Entity Encoder/Decoder','web','Encode and decode HTML entities.'],
+['markdown','Markdown Previewer','web','Preview basic Markdown safely.'],
+['image-compress','Image Compressor','web','Compress images in the browser.'],
+['image-resize','Image Resizer','web','Resize images in the browser.'],
+['image-format','Image Format Converter','web','Convert images to supported browser formats.'],
+['color-converter','Color Converter','web','Convert HEX, RGB and HSL.'],
+['gradient','CSS Gradient Generator','web','Create and copy CSS gradients.'],
+['shadow','CSS Box Shadow Generator','web','Create and copy box-shadow CSS.'],
+['radius','CSS Border Radius Generator','web','Create and copy border-radius CSS.'],
+['lorem','Lorem Ipsum Generator','web','Generate placeholder text.'],
+['timestamp','Timestamp Converter','web','Convert Unix timestamps and dates.'],
+['units','Unit Converter','web','Convert length, weight, temperature, area and volume.'],
+['currency','Currency Converter','web','Manual conversion mode; live rates require an API.']
+].map(x=>({id:x[0],name:x[1],cat:x[2],desc:x[3]}));
+const catById=id=>categories.find(c=>c.id===id);
+const toolById=id=>tools.find(t=>t.id===id);
+function layout(content){
+return `<header class="topbar"><nav class="nav">
+<div class="brand" onclick="go('home')"><div class="logo">ED</div><div><strong>Easy Digital Buddy</strong><small>Your Everyday Digital Helper</small></div></div>
+<div class="navlinks">${categories.map(c=>`<button onclick="go('category/${c.id}')">${c.name}</button>`).join('')}</div>
+<div class="search"><input id="globalSearch" placeholder="Search tools..." oninput="searchTools(this.value)"></div><button class="ghost" onclick="toggleTheme()">☀️</button><button class="ghost" onclick="toggleLang()" id="langBtn">हिं</button>
+</nav></header><main class="container">${content}</main>
+<div class="edb-reveal" style="margin:28px 0;padding:22px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(135deg,var(--panel),var(--panel2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+  <div><b style="font-size:1.2rem">⚡ Quick Buddy Mode</b><p class="muted" style="margin:6px 0 0">Press <span class="edb-shortcut">Ctrl</span> + <span class="edb-shortcut">K</span> to instantly find any tool or page.</p></div>
+  <button class="btn" onclick="openCommand()">Open Quick Search</button>
+</div>
+<footer class="footer">© 2026 Easy Digital Buddy · Free browser-based digital helper · No passwords are stored.</footer>`;
+}
+function home(){
+return layout(`<section class="hero"><div><div class="tag">FREE DIGITAL TOOLKIT</div><h1>Meet your <span>Everyday Digital Helper.</span></h1><p>Easy Digital Buddy brings practical tools for students, creators, online safety, internet use and everyday digital work into one clean, mobile-friendly website.</p><div class="search" style="max-width:600px"><input placeholder="Search any tool..." oninput="searchTools(this.value)"></div></div><div class="hero-card"><div class="biglogo">ED</div><h2>Simple. Useful. Digital.</h2><p class="muted">Tools that work directly in your browser wherever possible.</p></div></section>
+<div id="searchResults"></div>
+<div class="section-title"><h2>Explore Categories</h2><span class="muted">Everything is accessible</span></div><div class="grid">${categories.map(c=>`<div class="card category-card" onclick="go('category/${c.id}')"><div class="icon">${c.icon}</div><h3>${c.name}</h3><p class="muted">${c.desc}</p><button class="btn secondary">Open Category →</button></div>`).join('')}</div>
+<div class="section-title"><h2>Featured Tools</h2></div><div class="grid">${tools.slice(0,12).map(toolCard).join('')}</div>
+
+<div class="buddy-strip"><div class="buddy-icon">ED</div><div><b id="buddyGreeting">Hi! I’m ED Buddy 👋</b><span id="buddyRotating">Find a tool. Learn a skill. Stay safe online.</span></div></div>
+
+<div class="section-title"><h2>🛒 Digital Store</h2><span class="edb-live-badge"><i></i> Live Digital Shop</span></div>
+<div class="store-grid">
+  <div class="product-card">
+    <div class="product-preview resume-preview">
+  <div class="mini-resume">
+    <div class="mini-resume-side"><strong>YOUR<br>NAME</strong><small>STUDENT • FRESHER</small><i></i><em>CONTACT</em><em>SKILLS</em><em>LANGUAGES</em></div>
+    <div class="mini-resume-main"><h4>YOUR NAME</h4><span>WEB DESIGNER • STUDENT</span><hr><b>PROFILE</b><p></p><p></p><b>EDUCATION</b><p></p><b>PROJECTS</b><p></p></div>
+  </div>
+</div>
+    <h3>📄 Professional Fresher Resume Template</h3><span class="preview-label">👁 Live visual preview</span><p class="muted">A clean editable resume layout for students and freshers.</p>
+    <div class="price-row"><b>₹99</b><button class="btn" onclick="openProduct('resume')">View Product</button></div>
+  </div>
+  <div class="product-card">
+    <div class="product-preview business-preview">
+  <div class="mini-business">
+    <div class="biz-brand">YOUR BRAND</div><h4>BUILD YOUR<br>BRAND</h4><div class="biz-pill">PRICE LIST</div><div class="biz-lines"></div><div class="biz-offer">SPECIAL<br>OFFER</div>
+  </div>
+</div>
+    <h3>💼 Small Business Starter Pack</h3><span class="preview-label">👁 Live visual preview</span><p class="muted">A practical starter pack for small businesses and creators.</p>
+    <div class="price-row"><b>₹149</b><button class="btn" onclick="openProduct('business')">View Product</button></div>
+  </div>
+  <div class="product-card">
+    <div class="product-preview study-preview">
+  <div class="mini-study">
+    <div class="study-top">MY STUDY<br><strong>PLANNER</strong></div>
+    <div class="study-goal">🎯 WEEKLY GOALS</div>
+    <div class="study-week"><i>MON</i><i>TUE</i><i>WED</i><i>THU</i><i>FRI</i><i>SAT</i><i>SUN</i></div>
+    <div class="study-note">☐ TASKS & NOTES</div>
+  </div>
+</div>
+    <h3>📚 Student Planner Pack</h3><span class="preview-label">👁 Live visual preview</span><p class="muted">Plan study, tasks and goals in one simple digital pack.</p>
+    <div class="price-row"><b>₹99</b><button class="btn" onclick="openProduct('study')">View Product</button></div>
+  </div>
+</div>
+<div id="productModal" class="modal" onclick="if(event.target===this)closeProduct()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProduct()">✕</button>
+    <div id="productDetails"></div>
+  </div>
+</div>
+<div class="section-title"><h2>💼 Digital Services</h2><span class="muted">Custom work by request</span></div>
+<div class="service-grid">
+  <button class="service-card" onclick="openWhatsApp('custom')">📄 <b>Custom Resume / CV</b><small>Made according to your requirements</small></button>
+  <button class="service-card" onclick="openWhatsApp('website')">🌐 <b>Website Design</b><small>Landing pages and small business websites</small></button>
+  <button class="service-card" onclick="openWhatsApp('custom')">🎨 <b>Custom Canva Design</b><small>Posts, posters, catalogues and more</small></button>
+  <button class="service-card" onclick="openWhatsApp('custom')">🧾 <b>PDF & Business Documents</b><small>Invoices, price lists and digital documents</small></button>
+</div>
+
+<div class="section-title"><h2>What do you need help with?</h2><span class="muted">Choose your path</span></div>
+<div class="path-grid">
+ <button class="path-card" onclick="openWizard('study')">📚<b>Study</b><small>Calculators, timers & notes</small></button>
+ <button class="path-card" onclick="openWizard('earning')">💰<b>Earn Online</b><small>Skills, roadmaps & safety</small></button>
+ <button class="path-card" onclick="openWizard('safety')">🔐<b>Stay Safe</b><small>Passwords, phishing & privacy</small></button>
+ <button class="path-card" onclick="openWizard('digital')">📱<b>Digital Help</b><small>Useful tools & converters</small></button>
+</div>
+<div class="section-title"><h2>Digital Help Wizard</h2><span class="muted">A simple guided path</span></div>
+<div id="wizardBox" class="feature-panel"><h3>👋 What would you like to do?</h3><p class="muted">Choose a path above and ED Buddy will suggest your next steps.</p></div>
+<div class="section-title"><h2>My Digital Dashboard</h2><span class="muted">Saved only in this browser</span></div>
+<div id="dashboardBox" class="dashboard-grid"></div>
+<div class="section-title"><h2>Tool Workflows</h2><span class="muted">Complete tasks step by step</span></div>
+<div class="workflow-grid">
+ <button class="workflow-card" onclick="openWorkflow('freelance')"><b>💼 Start Freelancing</b><span>Skill → Practice → Portfolio → Earning</span></button>
+ <button class="workflow-card" onclick="openWorkflow('content')"><b>📸 Create Digital Content</b><span>Idea → Text → Image → QR/Share</span></button>
+ <button class="workflow-card" onclick="openWorkflow('safety')"><b>🛡️ Secure Your Account</b><span>Password → Privacy → Phishing Check</span></button>
+</div>
+<div class="section-title"><h2>Popular Everyday Tools</h2></div><div class="grid">${['calculator','percentage','password-gen','word-counter','qr-gen','json'].map(id=>toolCard(toolById(id))).join('')}</div><div id="recentSection"></div><script>setTimeout(renderRecent,0)<\/script>`);
+}
+function toolCard(t){return `<div class="card tool-card" onclick="go('tool/${t.id}')"><span class="tag">${catById(t.cat).name}</span><h3>${t.name}</h3><p>${t.desc}</p><button class="btn secondary">Open Tool →</button></div>`}
+function category(id){
+const c=catById(id); if(!c)return home();
+return layout(`<div class="crumb"><button class="ghost" onclick="go('home')">Home</button> › ${c.name}</div><div class="section-title"><h1>${c.icon} ${c.name}</h1><span class="muted">${c.desc}</span></div><div class="grid">${tools.filter(t=>t.cat===id).map(toolCard).join('')}</div>`);
+}
+function field(label,html,full=false){return `<div class="field ${full?'full':''}"><label>${label}</label>${html}</div>`}
+function toolPage(id){
+const t=toolById(id);if(!t)return home();return layout(`<div class="crumb"><button class="ghost" onclick="go('home')">Home</button> › <button class="ghost" onclick="go('category/${t.cat}')">${catById(t.cat).name}</button> › ${t.name}</div><div class="toolbox"><div class="tool-head"><div><h1>${t.name}</h1><p class="muted">${t.desc}</p></div><button class="btn secondary" onclick="go('category/${t.cat}')">← Back to Category</button></div><div class="card">${toolUI(id)}</div></div>`);
+}
+function toolUI(id){
+const common=(body,fn='')=>`${body}<div class="actions"><button class="btn" onclick="${fn}">Run</button><button class="btn secondary" onclick="resetTool()">Reset</button></div><div id="result" class="result" style="display:none"></div>`;
+switch(id){
+case'percentage':return common(`<div class="form-grid">${field('Marks obtained','<input id="a" type="number" min="0">')}${field('Total marks','<input id="b" type="number" min="0">')}</div>`,'calcPercentage()');
+case'average':return common(field('Numbers (comma separated)','<input id="a" placeholder="10, 20, 30">'),'calcAverage()');
+case'cgpa':return common(field('CGPA','<input id="a" type="number" step="0.01" min="0" max="10">')+'<p class="muted">Approximation used: Percentage ≈ CGPA × 9.5. Your institution may use a different formula.</p>','calcCGPA()');
+case'increase':return common(`<div class="form-grid">${field('Original value','<input id="a" type="number">')}${field('New value','<input id="b" type="number">')}</div>`,'calcIncrease()');
+case'calculator':return `<div class="form-grid">${field('First number','<input id="a" type="number" step="any">')}${field('Operation','<select id="op"><option>+</option><option>-</option><option>*</option><option>/</option></select>')}${field('Second number','<input id="b" type="number" step="any">')}</div>${common('','calcBasic()')}`;
+case'age':return common(field('Date of birth','<input id="a" type="date">'),'calcAge()');
+case'date-diff':return common(`<div class="form-grid">${field('Start date','<input id="a" type="date">')}${field('End date','<input id="b" type="date">')}</div>`,'calcDateDiff()');
+case'notes':return notesUI();case'todo':return todoUI();case'study-timer':return timerUI('Study Timer',25*60);case'word-counter':return `<textarea id="a" placeholder="Type or paste your text here..." style="width:100%;min-height:220px"></textarea><div id="wc" class="result">Words: 0 · Characters: 0 · Without spaces: 0 · Sentences: 0 · Paragraphs: 0</div><div class="actions"><button class="btn secondary" onclick="resetTool()">Clear</button></div><script>setTimeout(()=>{let x=document.getElementById('a');x.oninput=()=>wordCount(x.value)},0)<\/script>`;
+case'prompt-gen':return common(`<div class="form-grid">${field('Category','<select id="a"><option>Study</option><option>Writing</option><option>Programming</option><option>Business</option><option>Content Creation</option></select>')}${field('Goal','<input id="b" placeholder="e.g. learn JavaScript loops">')}</div>`,'promptGen()');
+case'prompt-improver':return common(field('Your prompt','<textarea id="a" placeholder="Write your rough prompt..."></textarea>',true),'promptImprove()');
+case'writing-helper':return common(`<div class="form-grid">${field('Task','<select id="op"><option>Rewrite</option><option>Summarize</option><option>Expand</option><option>Make simpler</option><option>Make professional</option></select>')}</div>${field('Text','<textarea id="a"></textarea>',true)}`,'writingHelp()');
+case'study-prompt':return common(`<div class="form-grid">${field('Subject','<input id="a">')}${field('Topic','<input id="b">')}${field('Difficulty','<select id="op"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>')}</div>`,'studyPrompt()');
+case'idea-gen':return common(field('Topic','<input id="a" placeholder="e.g. cyber security for beginners">'),'ideaGen()');
+case'ai-directory':return `<input id="dirSearch" oninput="filterDirectory(this.value)" placeholder="Search AI categories..." style="width:100%;padding:11px;background:#0b111c;border:1px solid var(--border);color:var(--text);border-radius:10px"><div id="directory" class="grid" style="margin-top:15px">${['Writing & Research','Coding Assistants','Design & Image','Video & Audio','Education & Study','Productivity & Automation'].map(x=>`<div class="card" data-dir="${x.toLowerCase()}"><h3>${x}</h3><p class="muted">Explore tools in this category through official websites and trusted services. This directory does not claim API access.</p></div>`).join('')}</div>`;
+case'password-check':return `<div class="field">${field('Password','<input id="a" type="password" autocomplete="new-password" oninput="passwordCheck(this.value)">')}</div><div id="result" class="result">Type a password to check characteristics. It is not stored.</div>`;
+case'password-gen':return common(`<div class="form-grid">${field('Length','<input id="a" type="number" min="4" max="128" value="16">')}${field('Options','<div class="checklist"><label><input id="up" type="checkbox" checked> Uppercase</label><label><input id="low" type="checkbox" checked> Lowercase</label><label><input id="num" type="checkbox" checked> Numbers</label><label><input id="sym" type="checkbox" checked> Symbols</label></div>')}</div>`,'passwordGen()');
+case'username':return common(field('Username','<input id="a" placeholder="your_username">')+'<p class="muted">Real availability can only be checked on each individual platform. This tool does not make fake availability claims.</p>','usernameCheck()');
+case'phishing':return common(field('Suspicious message or URL','<textarea id="a"></textarea>',true),'phishingCheck()');
+case'url-safety':return common(field('URL','<input id="a" placeholder="https://example.com">'),'urlSafety()');
+case'cyber-check':return checklist('cyberChecklist',['Use unique passwords','Enable two-factor authentication','Update phone and apps','Review account recovery options','Avoid unknown attachments and links']);
+case'privacy-check':return checklist('privacyChecklist',['Review account privacy settings','Use screen lock','Check app permissions','Limit public personal information','Review social media audience settings']);
+case'safety-guide':return `<div class="guide"><article><h3>Use unique passwords</h3><p>Never reuse an important password across multiple services.</p></article><article><h3>Use a password manager</h3><p>A reputable password manager can help create and store unique passwords securely.</p></article><article><h3>Turn on MFA</h3><p>Multi-factor authentication adds another layer of protection.</p></article><article><h3>Never share passwords</h3><p>Easy Digital Buddy never asks you to enter or send a real password for storage.</p></article></div>`;
+case'earning-roadmap':return `<div class="guide">${[['Freelancing','Choose one skill → build samples → create a profile → apply consistently.'],['Website Building','Learn HTML/CSS/JS → build projects → offer websites to local businesses.'],['Blogging','Choose a useful niche → publish consistently → learn SEO → monetize later.'],['Affiliate Marketing','Build an audience → recommend relevant products honestly → disclose affiliate links.'],['Digital Products','Create templates, guides or assets → validate demand → sell through a suitable platform.'],['YouTube/Content','Choose a topic → create useful content → improve thumbnails, titles and consistency.'],['Tutoring','Choose a subject → define your level → find students through trusted channels.'],['Remote Work','Build job-ready skills → portfolio/CV → apply to verified opportunities.'],['Microtasks','Use trusted platforms and understand payment rules; income is usually variable.']].map(x=>`<article><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join('')}</div>`;
+case'income-calc':return common(`<div class="form-grid">${field('Estimated hourly rate','<input id="a" type="number" min="0">')}${field('Hours per week','<input id="b" type="number" min="0">')}</div><p class="muted">Estimate only. Actual income varies by skill, demand, platform fees, taxes and consistency.</p>`,'incomeCalc()');
+case'time-calc':return common(`<div class="form-grid">${field('Hours per day','<input id="a" type="number" min="0">')}${field('Days per week','<input id="b" type="number" min="0" max="7">')}</div>`,'timeCalc()');
+case'skill-tracker':return `<div class="form-grid">${field('Skill name','<input id="a" placeholder="JavaScript">')}${field('Progress %','<input id="b" type="number" min="0" max="100" value="0">')}</div>${common('','saveSkill()')}<div id="skills" style="margin-top:15px"></div><script>setTimeout(renderSkills,0)<\/script>`;
+case'data-calc':return common(`<div class="form-grid">${field('Daily video hours','<input id="a" type="number" min="0">')}${field('Video data per hour (GB)','<input id="b" type="number" step="any" value="1">')}${field('Daily other data (GB)','<input id="c" type="number" step="any" value="0.2">')}</div>`,'dataCalc()');
+case'download-time':return common(`<div class="form-grid">${field('File size (GB)','<input id="a" type="number" step="any">')}${field('Speed (Mbps)','<input id="b" type="number" step="any">')}</div>`,'downloadTime()');
+case'data-converter':return common(`<div class="form-grid">${field('Value','<input id="a" type="number" step="any">')}${field('From','<select id="op"><option>Bytes</option><option>KB</option><option>MB</option><option>GB</option><option>TB</option></select>')}${field('To','<select id="b"><option>Bytes</option><option>KB</option><option>MB</option><option>GB</option><option>TB</option></select>')}</div>`,'dataConvert()');
+case'speed-converter':return common(`<div class="form-grid">${field('Value','<input id="a" type="number" step="any">')}${field('From','<select id="op"><option>Mbps</option><option>MB/s</option><option>Gbps</option></select>')}${field('To','<select id="b"><option>Mbps</option><option>MB/s</option><option>Gbps</option></select>')}</div>`,'speedConvert()');
+case'qr-gen':return common(`<div class="form-grid">${field('Type','<select id="op"><option>Text</option><option>URL</option><option>Email</option><option>Phone</option></select>')}</div>${field('Content','<textarea id="a"></textarea>',true)}<p class="muted">This single-file version creates a clean QR-style SVG fallback without an external QR library. For production-grade QR decoding/encoding, a dedicated library can be added.</p>`,'qrGenerate()');
+case'qr-reader':return `<p>Camera access requires browser permission and HTTPS/localhost in most browsers. This single-file offline fallback lets you select an image, but decoding QR pixels requires a QR decoding library.</p><input type="file" accept="image/*" capture="environment" onchange="qrReaderInfo(this)"><div id="result" class="result">No image selected.</div>`;
+case'url-shortener':return `<div class="result">A real short URL must be created by a backend or shortening API. This tool intentionally does not fake short links. You can enter a URL below to validate it.</div>${common(field('URL','<input id="a" placeholder="https://example.com">'),'validateUrlOnly()')}`;
+case'color-picker':return `<input id="a" type="color" value="#63e6be" style="width:100%;height:70px" oninput="colorValues(this.value)"><div id="result" class="result">Choose a color.</div><script>setTimeout(()=>colorValues('#63e6be'),0)<\/script>`;
+case'random-number':return common(`<div class="form-grid">${field('Minimum','<input id="a" type="number" value="1">')}${field('Maximum','<input id="b" type="number" value="100">')}</div>`,'randomNumber()');
+case'random-choice':return common(field('Options (one per line)','<textarea id="a"></textarea>',true),'randomChoice()');
+case'case':return textTool('Text','caseConvert()');
+case'cleaner':return textTool('Text','cleanText()');
+case'repeater':return common(`<div class="form-grid">${field('Text','<input id="a">')}${field('Repeat count','<input id="b" type="number" min="1" max="10000" value="3">')}</div>`,'repeatText()');
+case'sorter':return common(`<textarea id="a" placeholder="One item per line"></textarea><div class="checklist"><label><input id="dup" type="checkbox" checked> Remove duplicates</label></div>`,'sortText()');
+case'json':return textTool('JSON','formatJSON()');
+case'base64':return `<div class="form-grid">${field('Mode','<select id="op"><option>Encode</option><option>Decode</option></select>')}</div>${field('Text','<textarea id="a"></textarea>',true)}${common('','base64Run()')}`;
+case'url-code':return `<div class="form-grid">${field('Mode','<select id="op"><option>Encode</option><option>Decode</option></select>')}</div>${field('Text','<textarea id="a"></textarea>',true)}${common('','urlCodeRun()')}`;
+case'html-entity':return `<div class="form-grid">${field('Mode','<select id="op"><option>Encode</option><option>Decode</option></select>')}</div>${field('Text','<textarea id="a"></textarea>',true)}${common('','entityRun()')}`;
+case'markdown':return `<div class="form-grid"><div class="field"><label>Markdown</label><textarea id="a" oninput="markdownPreview(this.value)"># Hello\n\n**Bold** and *italic*</textarea></div><div class="field"><label>Preview</label><div id="preview" class="result"></div></div></div><script>setTimeout(()=>markdownPreview($('#a').value),0)<\/script>`;
+case'image-compress':return imageTool('compress');
+case'image-resize':return imageTool('resize');
+case'image-format':return imageTool('format');
+case'color-converter':return common(field('HEX color','<input id="a" placeholder="#63e6be">'),'colorConvert()');
+case'gradient':return `<div class="form-grid">${field('Color 1','<input id="a" type="color" value="#63e6be">')}${field('Color 2','<input id="b" type="color" value="#7c9cff">')}${field('Direction','<select id="op"><option>to right</option><option>to left</option><option>to bottom</option><option>to top</option><option>135deg</option></select>')}</div><div id="preview" style="height:140px;border-radius:14px;margin-top:15px"></div><div id="result" class="result"></div><div class="actions"><button class="btn" onclick="gradientRun()">Generate</button><button class="btn secondary" onclick="copyText($('#result').textContent)">Copy CSS</button></div><script>setTimeout(gradientRun,0)<\/script>`;
+case'shadow':return `<div class="form-grid">${field('X (px)','<input id="a" type="number" value="8">')}${field('Y (px)','<input id="b" type="number" value="8">')}${field('Blur (px)','<input id="c" type="number" value="20">')}${field('Spread (px)','<input id="d" type="number" value="0">')}</div><div id="preview" style="height:120px;background:#172033;border-radius:12px;margin:25px"></div><div id="result" class="result"></div><div class="actions"><button class="btn" onclick="shadowRun()">Generate</button><button class="btn secondary" onclick="copyText($('#result').textContent)">Copy CSS</button></div><script>setTimeout(shadowRun,0)<\/script>`;
+case'radius':return `<div class="form-grid">${['Top-left','Top-right','Bottom-right','Bottom-left'].map((x,i)=>field(x,`<input id="r${i}" type="range" min="0" max="100" value="20" oninput="radiusRun()">`)).join('')}</div><div id="preview" style="height:150px;background:#63e6be;margin:25px"></div><div id="result" class="result"></div><script>setTimeout(radiusRun,0)<\/script>`;
+case'lorem':return common(`<div class="form-grid">${field('Paragraphs','<input id="a" type="number" min="1" max="20" value="2">')}${field('Approx. words per paragraph','<input id="b" type="number" min="5" max="500" value="50">')}</div>`,'loremRun()');
+case'timestamp':return common(`<div class="form-grid">${field('Mode','<select id="op"><option>Unix → Date</option><option>Date → Unix</option></select>')}${field('Value','<input id="a" placeholder="e.g. 1720000000 or 2026-07-19T12:00">')}</div>`,'timestampRun()');
+case'units':return common(`<div class="form-grid">${field('Category','<select id="op"><option>Length</option><option>Weight</option><option>Temperature</option><option>Area</option><option>Volume</option></select>')}${field('Value','<input id="a" type="number" step="any">')}${field('From','<input id="b" placeholder="km">')}${field('To','<input id="c" placeholder="m">')}</div><p class="muted">Supported examples: length m, km, cm, mi, ft; weight kg, g, lb; temperature C, F; area m2, km2, ft2; volume L, mL, gal.</p>`,'unitRun()');
+case'currency':return common(`<div class="form-grid">${field('Amount','<input id="a" type="number" step="any">')}${field('Manual rate (target units per 1 source unit)','<input id="b" type="number" step="any" placeholder="Enter your current rate">')}</div><p class="muted">Live exchange rates require a current API. This tool intentionally uses manual conversion only and does not display fake live rates.</p>`,'currencyRun()');
+default:return '<p>Tool not found.</p>';
+}}
+function common(body,fn){return `${body}<div class="actions"><button class="btn" onclick="${fn}">Generate / Calculate</button><button class="btn secondary" onclick="resetTool()">Reset</button></div><div id="result" class="result" style="display:none"></div>`}
+function textTool(label,fn){return common(field(label,'<textarea id="a" style="min-height:220px"></textarea>',true),fn)}
+function checklist(key,items){return `<div class="checklist">${items.map((x,i)=>`<label class="check"><input type="checkbox" data-key="${key}" data-i="${i}" onchange="saveChecklist('${key}')"> ${x}</label>`).join('')}</div><div class="actions"><button class="btn secondary" onclick="clearChecklist('${key}')">Clear Progress</button></div><script>setTimeout(()=>loadChecklist('${key}'),0)<\/script>`}
+function result(text,err=false){const r=$('#result');if(!r)return;r.style.display='block';r.className='result '+(err?'error':'success');r.textContent=text}
+function val(id){return $(id)?.value?.trim()??''}
+function resetTool(){document.querySelectorAll('input,textarea').forEach(x=>{if(x.type==='checkbox')x.checked=false;else if(x.type!=='color')x.value=''});const r=$('#result');if(r){r.style.display='none';r.textContent=''}if($('#wc'))wordCount('')}
+function num(id){return Number(val(id))}
+function calcPercentage(){let a=num('#a'),b=num('#b');if(b<=0||a<0)return result('Please enter valid marks.',1);result(`${fmt(a/b*100)}%`)}
+function calcAverage(){let a=val('#a').split(',').map(Number).filter(Number.isFinite);if(!a.length)return result('Enter comma-separated numbers.',1);result(`Average: ${fmt(a.reduce((x,y)=>x+y,0)/a.length)}`)}
+function calcCGPA(){let a=num('#a');if(a<0||a>10)return result('CGPA should normally be between 0 and 10.',1);result(`Approximate percentage: ${fmt(a*9.5)}%`)}
+function calcIncrease(){let a=num('#a'),b=num('#b');if(!Number.isFinite(a)||!Number.isFinite(b)||a===0)return result('Original value must be a non-zero number.',1);let p=(b-a)/Math.abs(a)*100;result(`${p>=0?'Increase':'Decrease'}: ${fmt(Math.abs(p))}%`)}
+function calcBasic(){let a=num('#a'),b=num('#b'),o=val('#op');if(o==='/'&&b===0)return result('Cannot divide by zero.',1);result(`Result: ${fmt({'+':a+b,'-':a-b,'*':a*b,'/':a/b}[o])}`)}
+function calcAge(){let d=new Date(val('#a'));if(isNaN(d))return result('Select a valid date.',1);let now=new Date();if(d>now)return result('Date of birth cannot be in the future.',1);let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth(),day=now.getDate()-d.getDate();if(day<0){m--;day+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(m<0){y--;m+=12}result(`${y} years, ${m} months, ${day} days`)}
+function calcDateDiff(){let a=new Date(val('#a')),b=new Date(val('#b'));if(isNaN(a)||isNaN(b))return result('Select both dates.',1);result(`${Math.abs(Math.round((b-a)/86400000))} days difference`)}
+function wordCount(s){let words=s.trim()?s.trim().split(/\s+/).length:0,chars=s.length,without=s.replace(/\s/g,'').length,sent=s.trim()?s.split(/[.!?]+/).filter(x=>x.trim()).length:0,paras=s.trim()?s.split(/\n\s*\n/).filter(x=>x.trim()).length:0;$('#wc').textContent=`Words: ${words} · Characters: ${chars} · Without spaces: ${without} · Sentences: ${sent} · Paragraphs: ${paras}`}
+function promptGen(){let c=val('#a'),g=val('#b');if(!g)return result('Enter a goal.',1);result(`You are an expert ${c} mentor. Help me with: ${g}\n\nRequirements:\n- Explain clearly and step by step.\n- Use practical examples.\n- Mention common mistakes.\n- Give a concise summary and next actions.`)}
+function promptImprove(){let x=val('#a');if(!x)return result('Enter a prompt.',1);result(`Improved Prompt:\n\nAct as a helpful expert. ${x}\n\nPlease provide a clear, accurate, structured answer with practical examples. State assumptions when needed and avoid inventing facts.`)}
+function writingHelp(){let x=val('#a'),o=val('#op');if(!x)return result('Enter text.',1);let out={Rewrite:`Rewritten version:\n${x}`,Summarize:`Summary:\n${x.split(/[.!?]/).filter(Boolean).slice(0,2).join('. ')}.`,Expand:`Expanded direction:\n${x}\n\nAdd context, examples, explanations and a clear conclusion.`, 'Make simpler':`Simplified version:\n${x}`, 'Make professional':`Professional version:\n${x}`}[o];result(out)}
+function studyPrompt(){if(!val('#a')||!val('#b'))return result('Enter subject and topic.',1);result(`Create a ${val('#op')} study lesson for ${val('#a')} on "${val('#b')}". Explain concepts step by step, include examples, a short quiz, common mistakes and a revision summary.`)}
+function ideaGen(){let x=val('#a');if(!x)return result('Enter a topic.',1);result(Array.from({length:8},(_,i)=>`${i+1}. ${x} idea: Create a useful project/content/resource focused on a specific beginner problem and solve it simply.`).join('\n'))}
+function filterDirectory(q){document.querySelectorAll('[data-dir]').forEach(x=>x.style.display=x.dataset.dir.includes(q.toLowerCase())?'block':'none')}
+function passwordCheck(p){let checks=[['Length ≥ 12',p.length>=12],['Uppercase',/[A-Z]/.test(p)],['Lowercase',/[a-z]/.test(p)],['Number',/\d/.test(p)],['Special character',/[^A-Za-z0-9]/.test(p)]];let score=checks.filter(x=>x[1]).length;$('#result').textContent=`Strength: ${score<=2?'Weak':score<=4?'Moderate':'Strong'}\n\n`+checks.map(x=>`${x[1]?'✓':'✗'} ${x[0]}`).join('\n');}
+function passwordGen(){let l=Math.min(128,Math.max(4,num('#a')||16)),s=(document.querySelector('#up').checked?'ABCDEFGHJKLMNPQRSTUVWXYZ':'')+(document.querySelector('#low').checked?'abcdefghijkmnopqrstuvwxyz':'')+(document.querySelector('#num').checked?'23456789':'')+(document.querySelector('#sym').checked?'!@#$%^&*()-_=+[]{}?':'');if(!s)return result('Select at least one character set.',1);let out='';for(let i=0;i<l;i++)out+=s[Math.floor(Math.random()*s.length)];result(out);$('#result').insertAdjacentHTML('beforeend','<div class="actions"><button class="btn secondary" onclick="copyText(this.parentElement.parentElement.firstChild.textContent)">Copy</button></div>')}
+function usernameCheck(){let x=val('#a');if(!/^[A-Za-z0-9._-]{3,30}$/.test(x))return result('Invalid format. Use 3–30 letters, numbers, dot, underscore or hyphen.',1);result(`Format valid: @${x}\n\nAvailability is not checked. Try it directly on the platform you want to use.`)}
+function phishingCheck(){let x=val('#a').toLowerCase(),warn=[];if(/urgent|immediately|act now|within \d+ hours/.test(x))warn.push('Urgency or pressure language');if(/password|otp|verification code|bank|payment/.test(x))warn.push('Requests for sensitive information');if(/bit\.ly|tinyurl|t\.co|shorturl/.test(x))warn.push('Shortened link detected');if(/free money|winner|prize|congratulations/.test(x))warn.push('Prize or money bait');result((warn.length?'Warning signs found:\n- '+warn.join('\n- '):'No obvious patterns detected by this basic educational checker.')+'\n\nThis is not a guaranteed phishing scanner. Do not click suspicious links; verify through an official channel.')}
+function urlSafety(){let x=val('#a');try{let u=new URL(x);let w=[];if(u.protocol!=='https:')w.push('Connection is not HTTPS.');if(/@/.test(u.host))w.push('Username-like @ pattern in host.');if(u.hostname.includes('--'))w.push('Double hyphen can be a warning sign in some domains.');result(`Domain: ${u.hostname}\nProtocol: ${u.protocol}\n${w.length?'Warnings:\n- '+w.join('\n- '):'No basic warning pattern detected.'}\n\nThis is educational and not a guaranteed security scanner.`)}catch(e){result('Invalid URL.',1)}}
+function saveChecklist(k){let a=[...document.querySelectorAll(`[data-key="${k}"]`)].map(x=>x.checked);localStorage.setItem(k,JSON.stringify(a))}
+function loadChecklist(k){let a=JSON.parse(localStorage.getItem(k)||'[]');document.querySelectorAll(`[data-key="${k}"]`).forEach((x,i)=>x.checked=!!a[i])}
+function clearChecklist(k){localStorage.removeItem(k);loadChecklist(k)}
+function incomeCalc(){let a=num('#a'),b=num('#b');if(a<0||b<0)return result('Use positive values.',1);result(`Estimated weekly: ${fmt(a*b)}\nEstimated monthly (4.33 weeks): ${fmt(a*b*4.33)}\n\nEstimate only; actual income varies.`)}
+function timeCalc(){let a=num('#a'),b=num('#b');result(`Weekly time: ${fmt(a*b)} hours\nApprox. monthly: ${fmt(a*b*4.33)} hours`)}
+function saveSkill(){let x=val('#a'),p=Math.min(100,Math.max(0,num('#b')));if(!x)return result('Enter a skill name.',1);let a=JSON.parse(localStorage.getItem('skills')||'[]');a.push({x,p});localStorage.setItem('skills',JSON.stringify(a));renderSkills();result('Skill saved locally.')}
+function renderSkills(){let e=$('#skills');if(!e)return;let a=JSON.parse(localStorage.getItem('skills')||'[]');e.innerHTML=a.map((s,i)=>`<div class="card"><b>${esc(s.x)}</b><div class="progress"><div style="width:${s.p}%"></div></div><small>${s.p}%</small><button class="btn danger" onclick="deleteSkill(${i})" style="float:right;padding:5px 8px">Delete</button></div>`).join('')||'<p class="muted">No skills tracked yet.</p>'}
+function deleteSkill(i){let a=JSON.parse(localStorage.getItem('skills')||'[]');a.splice(i,1);localStorage.setItem('skills',JSON.stringify(a));renderSkills()}
+function dataCalc(){let a=num('#a'),b=num('#b'),c=num('#c');result(`Estimated daily: ${fmt(a*b+c)} GB\nEstimated 30-day usage: ${fmt((a*b+c)*30)} GB`)}
+function downloadTime(){let a=num('#a'),b=num('#b');if(a<0||b<=0)return result('Enter valid file size and speed.',1);let sec=a*1024*8/b;result(`Estimated time: ${fmt(sec/3600)} hours (${fmt(sec/60)} minutes)`)}
+const factors={Bytes:1,KB:1024,MB:1024**2,GB:1024**3,TB:1024**4};
+function dataConvert(){let a=num('#a'),from=val('#op'),to=val('#b');result(`${fmt(a*factors[from]/factors[to])} ${to}`)}
+const speed={Mbps:1,'MB/s':8,Gbps:1000};function speedConvert(){let a=num('#a'),f=val('#op'),t=val('#b');result(`${fmt(a*speed[f]/speed[t])} ${t}`)}
+function qrGenerate(){let x=val('#a');if(!x)return result('Enter content.',1);let data=encodeURIComponent(x),svg=`<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><rect width="100%" height="100%" fill="white"/><rect x="20" y="20" width="60" height="60" fill="black"/><rect x="35" y="35" width="30" height="30" fill="white"/><rect x="160" y="20" width="60" height="60" fill="black"/><rect x="175" y="35" width="30" height="30" fill="white"/><rect x="20" y="160" width="60" height="60" fill="black"/><rect x="35" y="175" width="30" height="30" fill="white"/><text x="120" y="125" text-anchor="middle" font-size="10">QR FALLBACK</text></svg>`;result(`Content: ${x}\n\nA production QR encoder library is recommended for machine-readable QR codes. This single-file fallback does not pretend to create a scannable QR code.`)}
+function qrReaderInfo(x){result(x.files?.length?'Image selected. QR decoding requires a dedicated decoder library in this single-file build.':'No image selected.')}
+function validateUrlOnly(){try{let u=new URL(val('#a'));result(`Valid URL format.\n${u.href}\n\nA backend/API is required to create a real shortened URL.`)}catch(e){result('Invalid URL.',1)}}
+function colorValues(hex){let h=hex.replace('#','');if(h.length===3)h=h.split('').map(x=>x+x).join('');let r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16),mx=Math.max(r,g,b)/255,mn=Math.min(r,g,b)/255,d=mx-mn,l=(mx+mn)/2,s=d===0?0:d/(1-Math.abs(2*l-1)),hh=0;if(d){if(mx===r)hh=60*(((g-b)/255/d)%6);else if(mx===g)hh=60*((b-r)/255/d+2);else hh=60*((r-g)/255/d+4)}if(hh<0)hh+=360;let out=`HEX: #${h.toUpperCase()}\nRGB: rgb(${r}, ${g}, ${b})\nHSL: hsl(${fmt(hh)}, ${fmt(s*100)}%, ${fmt(l*100)}%)`;if($('#result'))$('#result').textContent=out}
+function randomNumber(){let a=num('#a'),b=num('#b');if(a>b)return result('Minimum cannot exceed maximum.',1);result(String(Math.floor(Math.random()*(b-a+1))+a))}
+function randomChoice(){let a=val('#a').split('\n').map(x=>x.trim()).filter(Boolean);if(!a.length)return result('Enter options.',1);result(a[Math.floor(Math.random()*a.length)])}
+function caseConvert(){let x=val('#a'),o=val('#op');result(x)}
+function cleanText(){result(val('#a').replace(/[ \t]+/g,' ').replace(/\n\s*\n+/g,'\n\n').trim())}
+function repeatText(){let x=val('#a'),n=Math.min(10000,Math.max(1,num('#b')));result(Array(n).fill(x).join('\n'))}
+function sortText(){let a=val('#a').split('\n').filter(Boolean);if($('#dup')?.checked)a=[...new Set(a)];result(a.sort((x,y)=>x.localeCompare(y)).join('\n'))}
+function formatJSON(){try{result(JSON.stringify(JSON.parse(val('#a')),null,2))}catch(e){result('Invalid JSON: '+e.message,1)}}
+function base64Run(){try{result(val('#op')==='Encode'?btoa(unescape(encodeURIComponent(val('#a')))):decodeURIComponent(escape(atob(val('#a')))))}catch(e){result('Invalid Base64 or unsupported text.',1)}}
+function urlCodeRun(){try{result(val('#op')==='Encode'?encodeURIComponent(val('#a')):decodeURIComponent(val('#a')))}catch(e){result('Could not decode URL text.',1)}}
+function entityRun(){let x=val('#a');if(val('#op')==='Encode')result(x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'));else{let t=document.createElement('textarea');t.innerHTML=x;result(t.value)}}
+function markdownPreview(x){let h=esc(x).replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/\n/g,'<br>');$('#preview').innerHTML=h}
+function imageTool(mode){return `<input id="img" type="file" accept="image/*" onchange="loadImage(this,'${mode}')"><div id="result" class="result">Select an image to begin.</div><canvas id="canvas" style="max-width:100%;display:none;margin-top:15px"></canvas><div class="actions"><button class="btn" onclick="downloadCanvas()">Download Result</button></div>`}
+let imageState={};
+function loadImage(input,mode){let f=input.files[0];if(!f)return;let im=new Image();im.onload=()=>{imageState={im,f,mode};let c=$('#canvas');c.style.display='block';let maxW=mode==='resize'?Math.min(im.width,800):im.width,maxH=mode==='resize'?Math.min(im.height,800):im.height;c.width=maxW;c.height=Math.round(im.height*maxW/im.width);c.getContext('2d').drawImage(im,0,0,c.width,c.height);result(`Original size: ${(f.size/1024).toFixed(1)} KB\nPreview ready.\n${mode==='compress'?'Browser compression can reduce size when exported as JPEG/WebP.':''}`)};im.src=URL.createObjectURL(f)}
+function downloadCanvas(){let c=$('#canvas');if(!c||!c.width)return result('Select an image first.',1);let a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='easy-digital-buddy-image.png';a.click()}
+function colorConvert(){let x=val('#a');if(!/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(x))return result('Enter a valid HEX color.',1);colorValues(x)}
+function gradientRun(){let css=`linear-gradient(${val('#op')}, ${val('#a')}, ${val('#b')})`;$('#preview').style.background=css;$('#result').textContent=`background: ${css};`}
+function shadowRun(){let css=`box-shadow: ${num('#a')}px ${num('#b')}px ${num('#c')}px ${num('#d')}px rgba(0,0,0,.35);`;$('#preview').style.boxShadow=css;$('#result').textContent=css}
+function radiusRun(){let a=[0,1,2,3].map(i=>$('#r'+i).value+'px').join(' '),css=`border-radius: ${a};`;$('#preview').style.borderRadius=css;$('#result').textContent=css}
+const loremWords='lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat'.split(' ');
+function loremRun(){let p=Math.min(20,Math.max(1,num('#a'))),w=Math.min(500,Math.max(5,num('#b'))),out=[];for(let i=0;i<p;i++){let a=[];for(let j=0;j<w;j++)a.push(loremWords[j%loremWords.length]);out.push(a.join(' ').replace(/^./,x=>x.toUpperCase())+'.')}result(out.join('\n\n'))}
+function timestampRun(){let x=val('#a');if(val('#op')==='Unix → Date'){let n=Number(x);if(!Number.isFinite(n))return result('Enter a valid Unix timestamp.',1);result(new Date(n*1000).toString())}else{let d=new Date(x);if(isNaN(d))return result('Enter a valid date/time.',1);result(String(Math.floor(d.getTime()/1000)))}}
+const unitData={Length:{m:1,km:1000,cm:.01,mi:1609.344,ft:.3048},Weight:{kg:1,g:.001,lb:.45359237},Area:{m2:1,km2:1e6,ft2:.092903},Volume:{L:1,mL:.001,gal:3.78541}};
+function unitRun(){let cat=val('#op'),a=num('#a'),f=val('#b'),t=val('#c');if(cat==='Temperature'){let c=f==='C'?a:(f==='F'?(a-32)*5/9:a-273.15);let out=t==='C'?c:(t==='F'?c*9/5+32:c+273.15);return result(`${fmt(out)} ${t}`)}if(!unitData[cat]?.[f]||!unitData[cat]?.[t])return result('Use supported units shown above.',1);result(`${fmt(a*unitData[cat][f]/unitData[cat][t])} ${t}`)}
+function currencyRun(){let a=num('#a'),b=num('#b');if(a<0||b<0)return result('Enter positive values.',1);result(`Manual conversion result: ${fmt(a*b)} target currency units\n\nRate used: ${b} target units per 1 source unit.\nThis is not a live exchange rate.`)}
+
+function toggleTheme(){document.body.classList.toggle('light-mode');localStorage.setItem('edb-theme',document.body.classList.contains('light-mode')?'light':'dark')}
+function applyTheme(){if(localStorage.getItem('edb-theme')==='light')document.body.classList.add('light-mode')}
+function recentIds(){return JSON.parse(localStorage.getItem('edb-recent')||'[]')}
+function addRecent(id){let a=recentIds().filter(x=>x!==id);a.unshift(id);localStorage.setItem('edb-recent',JSON.stringify(a.slice(0,8)));setTimeout(renderDashboard,50)}
+function renderRecent(){let e=$('#recentSection');if(!e)return;let a=recentIds().map(toolById).filter(Boolean);e.innerHTML=a.length?`<div class="section-title"><h2>Recently Used</h2></div><div class="grid">${a.map(toolCard).join('')}</div>`:''}
+function notesUI(){return `<div class="form-grid">${field('Note title','<input id="noteTitle" placeholder="My note">')}${field('Note content','<textarea id="noteText" placeholder="Write your note..."></textarea>',true)}</div><div class="actions"><button class="btn" onclick="saveNote()">Save Note</button><button class="btn secondary" onclick="clearNoteForm()">Clear</button></div><div id="notesList" style="margin-top:15px"></div><script>setTimeout(renderNotes,0)<\/script>`}
+function saveNote(){let title=val('#noteTitle')||'Untitled Note',text=val('#noteText');if(!text)return result('Write something first.',1);let a=JSON.parse(localStorage.getItem('edb-notes')||'[]');a.unshift({id:Date.now(),title,text,date:new Date().toLocaleString()});localStorage.setItem('edb-notes',JSON.stringify(a));renderNotes();clearNoteForm()}
+function renderNotes(){let e=$('#notesList');if(!e)return;let a=JSON.parse(localStorage.getItem('edb-notes')||'[]');e.innerHTML=a.map(n=>`<div class="card"><h3>${esc(n.title)}</h3><p style="white-space:pre-wrap">${esc(n.text)}</p><small class="muted">${esc(n.date)}</small><div class="actions"><button class="btn danger" onclick="deleteNote(${n.id})">Delete</button></div></div>`).join('')||'<p class="muted">No notes saved yet.</p>'}
+function deleteNote(id){let a=JSON.parse(localStorage.getItem('edb-notes')||'[]').filter(n=>n.id!==id);localStorage.setItem('edb-notes',JSON.stringify(a));renderNotes()}
+function clearNoteForm(){if($('#noteTitle'))$('#noteTitle').value='';if($('#noteText'))$('#noteText').value=''}
+function todoUI(){return `<div class="form-grid">${field('New task','<input id="taskText" placeholder="Complete assignment">')}</div><div class="actions"><button class="btn" onclick="addTask()">Add Task</button></div><div id="todoList" style="margin-top:15px"></div><script>setTimeout(renderTodos,0)<\/script>`}
+function addTask(){let t=val('#taskText');if(!t)return;let a=JSON.parse(localStorage.getItem('edb-todos')||'[]');a.push({id:Date.now(),text:t,done:false});localStorage.setItem('edb-todos',JSON.stringify(a));$('#taskText').value='';renderTodos()}
+function renderTodos(){let e=$('#todoList');if(!e)return;let a=JSON.parse(localStorage.getItem('edb-todos')||'[]');e.innerHTML=a.map(t=>`<div class="check"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${t.id})"><span style="${t.done?'text-decoration:line-through;color:var(--muted)':''}">${esc(t.text)}</span><button class="btn danger" style="margin-left:auto;padding:5px 8px" onclick="deleteTask(${t.id})">Delete</button></div>`).join('')||'<p class="muted">No tasks yet.</p>'}
+function toggleTask(id){let a=JSON.parse(localStorage.getItem('edb-todos')||'[]');let t=a.find(x=>x.id===id);if(t)t.done=!t.done;localStorage.setItem('edb-todos',JSON.stringify(a));renderTodos()}
+function deleteTask(id){let a=JSON.parse(localStorage.getItem('edb-todos')||'[]').filter(x=>x.id!==id);localStorage.setItem('edb-todos',JSON.stringify(a));renderTodos()}
+function timerUI(name,seconds){return `<div class="card" style="text-align:center"><h2>${name}</h2><div id="timerDisplay" style="font-size:52px;font-weight:900;margin:20px">${Math.floor(seconds/60)}:00</div><div class="actions" style="justify-content:center"><button class="btn" onclick="timerStart(${seconds})">Start</button><button class="btn secondary" onclick="timerPause()">Pause</button><button class="btn danger" onclick="timerReset(${seconds})">Reset</button></div></div>`}
+let timerState={id:null,remaining:0,running:false}
+function timerStart(seconds){if(!timerState.remaining)timerState.remaining=seconds;if(timerState.running)return;timerState.running=true;timerState.id=setInterval(()=>{if(timerState.remaining<=0){timerPause();alert('Timer complete!');return}timerState.remaining--;renderTimer()},1000);renderTimer()}
+function timerPause(){clearInterval(timerState.id);timerState.running=false}
+function timerReset(seconds){timerPause();timerState.remaining=seconds;renderTimer()}
+function renderTimer(){let e=$('#timerDisplay');if(!e)return;let m=Math.floor(timerState.remaining/60),s=timerState.remaining%60;e.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+
+
+
+const PRODUCTS={
+ resume:{title:'Professional Fresher Resume Template',price:'₹99',type:'Ready-made digital product',items:['Clean professional layout','Student and fresher friendly','Sections for education, skills and projects','Editable template format'],preview:'resume-preview'},
+ business:{title:'Small Business Starter Pack',price:'₹149',type:'Ready-made digital product',items:['Business card layout','Price list layout','Promotional poster layout','Useful for small businesses and creators'],preview:'business-preview'},
+ study:{title:'Student Planner Pack',price:'₹99',type:'Ready-made digital product',items:['Study planner','Weekly timetable','Task planner','Notes page'],preview:'study-preview'}
+};
+const PRODUCT_FILES={"resume":"data:text/html;base64,PCFkb2N0eXBlIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT5FREIgTW9kZXJuIEZyZXNoZXIgUmVzdW1lPC90aXRsZT4KPHN0eWxlPgoqe2JveC1zaXppbmc6Ym9yZGVyLWJveH1ib2R5e21hcmdpbjowO2JhY2tncm91bmQ6I2U5ZWVmNTtmb250LWZhbWlseTpBcmlhbCxzYW5zLXNlcmlmO2NvbG9yOiMxNzIwMzM7cGFkZGluZzoyOHB4fS5yZXN1bWV7bWF4LXdpZHRoOjkwMHB4O21hcmdpbjphdXRvO2JhY2tncm91bmQ6I2ZmZjtkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjI4MHB4IDFmcjtib3gtc2hhZG93OjAgMTVweCA0NXB4ICMxNzIwMzMyNTttaW4taGVpZ2h0OjExMjBweH0ubGVmdHtiYWNrZ3JvdW5kOiMxNzIwMzM7Y29sb3I6I2ZmZjtwYWRkaW5nOjM2cHggMjhweH0uYnJhbmR7Zm9udC1zaXplOjEycHg7bGV0dGVyLXNwYWNpbmc6M3B4O2NvbG9yOiM2ZWU3ZDg7bWFyZ2luLWJvdHRvbTo1MHB4fS5uYW1lLXNpZGV7Zm9udC1zaXplOjIycHg7Zm9udC13ZWlnaHQ6NzAwO2xpbmUtaGVpZ2h0OjEuMTU7bWFyZ2luLWJvdHRvbTo4cHh9LnJvbGUtc2lkZXtjb2xvcjojYjdjNWQ4O2ZvbnQtc2l6ZToxM3B4O21hcmdpbi1ib3R0b206MzVweH0ubGVmdCBoM3tmb250LXNpemU6MTFweDtsZXR0ZXItc3BhY2luZzoycHg7Y29sb3I6IzZlZTdkODtib3JkZXItYm90dG9tOjFweCBzb2xpZCAjZmZmZmZmMzM7cGFkZGluZy1ib3R0b206OXB4O21hcmdpbi10b3A6MjhweH0ubGVmdCBwLC5sZWZ0IGxpe2ZvbnQtc2l6ZToxMnB4O2xpbmUtaGVpZ2h0OjEuN30ubGVmdCB1bHtwYWRkaW5nLWxlZnQ6MThweH0ucmlnaHR7cGFkZGluZzo0OHB4IDUycHh9Lm5hbWV7Zm9udC1zaXplOjQycHg7bGluZS1oZWlnaHQ6MS4wNTttYXJnaW46MDtjb2xvcjojMTcyMDMzfS50aXRsZXtmb250LXNpemU6MTVweDtjb2xvcjojNjY3MDg1O2xldHRlci1zcGFjaW5nOjFweDttYXJnaW46MTBweCAwIDI4cHh9LnNlY3Rpb257bWFyZ2luOjI2cHggMH0uc2VjdGlvbiBoMntmb250LXNpemU6MTRweDtsZXR0ZXItc3BhY2luZzoycHg7Y29sb3I6IzE3MjAzMztib3JkZXItYm90dG9tOjJweCBzb2xpZCAjNmVlN2Q4O3BhZGRpbmctYm90dG9tOjhweH0uc2VjdGlvbiBoM3tmb250LXNpemU6MTZweDttYXJnaW46MTRweCAwIDRweH0ubWV0YXtmb250LXNpemU6MTJweDtjb2xvcjojNjY3MDg1fS5zZWN0aW9uIHB7Zm9udC1zaXplOjEzcHg7bGluZS1oZWlnaHQ6MS42NTtjb2xvcjojM2I0NjU2fS5za2lsbHN7ZGlzcGxheTpmbGV4O2ZsZXgtd3JhcDp3cmFwO2dhcDo4cHh9LnNraWxscyBzcGFue2JhY2tncm91bmQ6I2VlZjdmNjtwYWRkaW5nOjdweCAxMHB4O2JvcmRlci1yYWRpdXM6MTRweDtmb250LXNpemU6MTJweH1AbWVkaWEobWF4LXdpZHRoOjcwMHB4KXtib2R5e3BhZGRpbmc6MH0ucmVzdW1le2Rpc3BsYXk6YmxvY2t9LmxlZnR7cGFkZGluZzoyOHB4fS5yaWdodHtwYWRkaW5nOjMwcHggMjRweH0ubmFtZXtmb250LXNpemU6MzRweH19Cjwvc3R5bGU+PC9oZWFkPjxib2R5PjxkaXYgY2xhc3M9InJlc3VtZSI+PGFzaWRlIGNsYXNzPSJsZWZ0Ij48ZGl2IGNsYXNzPSJicmFuZCI+RUFTWSBESUdJVEFMIEJVRERZPC9kaXY+PGRpdiBjbGFzcz0ibmFtZS1zaWRlIj5ZT1VSPGJyPk5BTUU8L2Rpdj48ZGl2IGNsYXNzPSJyb2xlLXNpZGUiPlNUVURFTlQg4oCiIEZSRVNIRVIg4oCiIFBST0ZFU1NJT05BTDwvZGl2PjxoMz5DT05UQUNUPC9oMz48cD7wn5OeICs5MSBYWFhYWCBYWFhYWDwvcD48cD7inIkgeW91ckBlbWFpbC5jb208L3A+PHA+8J+TjSBDaXR5LCBJbmRpYTwvcD48cD7wn5SXIGxpbmtlZGluLmNvbS9pbi95b3VybmFtZTwvcD48aDM+Q09SRSBTS0lMTFM8L2gzPjx1bD48bGk+SFRNTCAmIENTUzwvbGk+PGxpPkphdmFTY3JpcHQ8L2xpPjxsaT5QeXRob248L2xpPjxsaT5Db21tdW5pY2F0aW9uPC9saT48bGk+UHJvYmxlbSBTb2x2aW5nPC9saT48L3VsPjxoMz5MQU5HVUFHRVM8L2gzPjxwPkhpbmRpIOKAlCBOYXRpdmU8YnI+RW5nbGlzaCDigJQgUHJvZmVzc2lvbmFsPC9wPjxoMz5JTlRFUkVTVFM8L2gzPjxwPlRlY2hub2xvZ3k8YnI+TGVhcm5pbmc8YnI+RGVzaWduPC9wPjwvYXNpZGU+PG1haW4gY2xhc3M9InJpZ2h0Ij48aDEgY2xhc3M9Im5hbWUiPllPVVIgTkFNRTwvaDE+PGRpdiBjbGFzcz0idGl0bGUiPkJDQSBTVFVERU5UIHwgV0VCIERFU0lHTkVSIHwgQVNQSVJJTkcgUFJPRkVTU0lPTkFMPC9kaXY+PHNlY3Rpb24gY2xhc3M9InNlY3Rpb24iPjxoMj5QUk9GSUxFPC9oMj48cD5Nb3RpdmF0ZWQgYW5kIGhhcmR3b3JraW5nIHN0dWRlbnQgd2l0aCBhIHN0cm9uZyBpbnRlcmVzdCBpbiB0ZWNobm9sb2d5LCB3ZWIgZGV2ZWxvcG1lbnQgYW5kIGNvbnRpbnVvdXMgbGVhcm5pbmcuIFJlcGxhY2UgdGhpcyBzdW1tYXJ5IHdpdGggeW91ciBvd24gY2FyZWVyIGdvYWwgYW5kIHN0cmVuZ3Rocy48L3A+PC9zZWN0aW9uPjxzZWN0aW9uIGNsYXNzPSJzZWN0aW9uIj48aDI+RURVQ0FUSU9OPC9oMj48aDM+QmFjaGVsb3IncyBEZWdyZWUgLyBDb3Vyc2UgTmFtZTwvaDM+PGRpdiBjbGFzcz0ibWV0YSI+Q29sbGVnZSAvIFVuaXZlcnNpdHkg4oCiIDIwMjQg4oCUIDIwMjc8L2Rpdj48cD5BZGQgeW91ciBkZWdyZWUsIHJlbGV2YW50IHN1YmplY3RzLCBDR1BBIG9yIGFjYWRlbWljIGFjaGlldmVtZW50cy48L3A+PC9zZWN0aW9uPjxzZWN0aW9uIGNsYXNzPSJzZWN0aW9uIj48aDI+UFJPSkVDVFM8L2gyPjxoMz5Qcm9qZWN0IE5hbWU8L2gzPjxkaXYgY2xhc3M9Im1ldGEiPlRlY2hub2xvZ3kgLyBUb29scyBVc2VkPC9kaXY+PHA+RXhwbGFpbiB3aGF0IHlvdSBidWlsdCwgd2hhdCBwcm9ibGVtIGl0IHNvbHZlZCBhbmQgd2hhdCB5b3UgbGVhcm5lZC48L3A+PGgzPlNlY29uZCBQcm9qZWN0PC9oMz48ZGl2IGNsYXNzPSJtZXRhIj5UZWNobm9sb2d5IC8gVG9vbHMgVXNlZDwvZGl2PjxwPkFkZCBhbm90aGVyIHByb2plY3QsIGNvbGxlZ2UgYXNzaWdubWVudCBvciBwZXJzb25hbCB3b3JrLjwvcD48L3NlY3Rpb24+PHNlY3Rpb24gY2xhc3M9InNlY3Rpb24iPjxoMj5FWFBFUklFTkNFIC8gSU5URVJOU0hJUDwvaDI+PGgzPlJvbGUg4oCUIENvbXBhbnkgLyBPcmdhbml6YXRpb248L2gzPjxkaXYgY2xhc3M9Im1ldGEiPk1vbnRoIFllYXIg4oCUIE1vbnRoIFllYXI8L2Rpdj48cD5EZXNjcmliZSB5b3VyIHdvcmssIHJlc3BvbnNpYmlsaXRpZXMgYW5kIGFjaGlldmVtZW50cyB1c2luZyBjbGVhciBhY3Rpb24gd29yZHMuPC9wPjwvc2VjdGlvbj48c2VjdGlvbiBjbGFzcz0ic2VjdGlvbiI+PGgyPkNFUlRJRklDQVRJT05TPC9oMj48cD5DZXJ0aWZpY2F0aW9uIE5hbWUg4oCUIElzc3VpbmcgT3JnYW5pemF0aW9uPGJyPkNvdXJzZSBOYW1lIOKAlCBQbGF0Zm9ybSAvIEluc3RpdHV0ZTwvcD48L3NlY3Rpb24+PHNlY3Rpb24gY2xhc3M9InNlY3Rpb24iPjxoMj5TS0lMTFM8L2gyPjxkaXYgY2xhc3M9InNraWxscyI+PHNwYW4+V2ViIERlc2lnbjwvc3Bhbj48c3Bhbj5KYXZhU2NyaXB0PC9zcGFuPjxzcGFuPlB5dGhvbjwvc3Bhbj48c3Bhbj5DeWJlciBTZWN1cml0eTwvc3Bhbj48c3Bhbj5NUyBPZmZpY2U8L3NwYW4+PC9kaXY+PC9zZWN0aW9uPjwvbWFpbj48L2Rpdj48L2JvZHk+PC9odG1sPg==","business":"data:text/html;base64,PCFkb2N0eXBlIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT5FREIgU21hbGwgQnVzaW5lc3MgU3RhcnRlciBQYWNrPC90aXRsZT4KPHN0eWxlPgoqe2JveC1zaXppbmc6Ym9yZGVyLWJveH1ib2R5e21hcmdpbjowO2JhY2tncm91bmQ6I2VkZjRmMjtmb250LWZhbWlseTpBcmlhbDtjb2xvcjojMTYzMzJmO3BhZGRpbmc6MjVweH0ucGFja3ttYXgtd2lkdGg6OTAwcHg7bWFyZ2luOmF1dG99LnNoZWV0e2JhY2tncm91bmQ6I2ZmZjtib3JkZXItcmFkaXVzOjIwcHg7cGFkZGluZzozOHB4O21hcmdpbjoyMnB4IDA7Ym94LXNoYWRvdzowIDEycHggMzVweCAjMTYzMzJmMTg7bWluLWhlaWdodDozNjBweH0uYnJhbmR7Y29sb3I6IzBmNzY2ZTtmb250LXNpemU6MTJweDtsZXR0ZXItc3BhY2luZzozcHg7Zm9udC13ZWlnaHQ6Ym9sZH0uaGVyb3tkaXNwbGF5OmZsZXg7anVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47YWxpZ24taXRlbXM6Y2VudGVyO2dhcDoyMHB4fS5oZXJvIGgxe2ZvbnQtc2l6ZTo0MnB4O21heC13aWR0aDo1MjBweH0udGFne2JhY2tncm91bmQ6I2Q5ZjNlZDtwYWRkaW5nOjE0cHggMThweDtib3JkZXItcmFkaXVzOjE1cHg7Zm9udC13ZWlnaHQ6Ym9sZDtjb2xvcjojMGY3NjZlfS5jYXJke2JvcmRlcjoycHggc29saWQgIzBmNzY2ZTtib3JkZXItcmFkaXVzOjE4cHg7cGFkZGluZzoyNXB4O21hcmdpbi10b3A6MjJweH0uY2FyZCBoMnttYXJnaW46MCAwIDEycHg7Y29sb3I6IzBmNzY2ZX0ucHJpY2UtZ3JpZHtkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdCgyLDFmcik7Z2FwOjE0cHh9LnByaWNle2JvcmRlcjoxcHggc29saWQgI2M3ZGRkOTtib3JkZXItcmFkaXVzOjEycHg7cGFkZGluZzoxNnB4O2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2Vlbn0ucG9zdGVye2JhY2tncm91bmQ6IzBmNzY2ZTtjb2xvcjp3aGl0ZTt0ZXh0LWFsaWduOmNlbnRlcjtwYWRkaW5nOjQ4cHg7Ym9yZGVyLXJhZGl1czoxOHB4fS5wb3N0ZXIgaDJ7Zm9udC1zaXplOjM4cHg7bWFyZ2luOjEwcHh9LnBvc3RlciBwe2ZvbnQtc2l6ZToxOHB4fS5jb250YWN0e2Rpc3BsYXk6ZmxleDtnYXA6MTJweDtmbGV4LXdyYXA6d3JhcDttYXJnaW4tdG9wOjE4cHh9LmNvbnRhY3Qgc3BhbntiYWNrZ3JvdW5kOiNlOGY0ZjE7cGFkZGluZzoxMHB4IDE0cHg7Ym9yZGVyLXJhZGl1czoxMnB4fUBtZWRpYShtYXgtd2lkdGg6NjUwcHgpe2JvZHl7cGFkZGluZzo4cHh9LnNoZWV0e3BhZGRpbmc6MjRweH0uaGVyb3tkaXNwbGF5OmJsb2NrfS5oZXJvIGgxe2ZvbnQtc2l6ZTozMnB4fS5wcmljZS1ncmlke2dyaWQtdGVtcGxhdGUtY29sdW1uczoxZnJ9fQo8L3N0eWxlPjwvaGVhZD48Ym9keT48ZGl2IGNsYXNzPSJwYWNrIj48c2VjdGlvbiBjbGFzcz0ic2hlZXQiPjxkaXYgY2xhc3M9ImJyYW5kIj5FQVNZIERJR0lUQUwgQlVERFkg4oCiIEJVU0lORVNTIFNUQVJURVIgUEFDSzwvZGl2PjxkaXYgY2xhc3M9Imhlcm8iPjxoMT5CdWlsZCBhIEJyYW5kIFBlb3BsZSBSZW1lbWJlci48L2gxPjxkaXYgY2xhc3M9InRhZyI+WU9VUiBCVVNJTkVTUyBOQU1FPC9kaXY+PC9kaXY+PHA+UmVwbGFjZSB0aGUgdGV4dCwgYWRkIHlvdXIgbG9nbyBhbmQgdXNlIHRoaXMgc3RhcnRlciBwYWNrIGZvciB5b3VyIGJ1c2luZXNzLjwvcD48ZGl2IGNsYXNzPSJjb250YWN0Ij48c3Bhbj7wn5OeICs5MSBYWFhYWCBYWFhYWDwvc3Bhbj48c3Bhbj7inIkgeW91ckBlbWFpbC5jb208L3NwYW4+PHNwYW4+8J+TjSBZb3VyIENpdHk8L3NwYW4+PC9kaXY+PC9zZWN0aW9uPjxzZWN0aW9uIGNsYXNzPSJzaGVldCI+PGRpdiBjbGFzcz0iYnJhbmQiPlBSSUNFIExJU1QgVEVNUExBVEU8L2Rpdj48aDE+T1VSIFNFUlZJQ0VTICYgUFJJQ0VTPC9oMT48ZGl2IGNsYXNzPSJwcmljZS1ncmlkIj48ZGl2IGNsYXNzPSJwcmljZSI+PGI+U2VydmljZSAvIFByb2R1Y3QgMDE8L2I+PHN0cm9uZz7igrlfX188L3N0cm9uZz48L2Rpdj48ZGl2IGNsYXNzPSJwcmljZSI+PGI+U2VydmljZSAvIFByb2R1Y3QgMDI8L2I+PHN0cm9uZz7igrlfX188L3N0cm9uZz48L2Rpdj48ZGl2IGNsYXNzPSJwcmljZSI+PGI+U2VydmljZSAvIFByb2R1Y3QgMDM8L2I+PHN0cm9uZz7igrlfX188L3N0cm9uZz48L2Rpdj48ZGl2IGNsYXNzPSJwcmljZSI+PGI+U2VydmljZSAvIFByb2R1Y3QgMDQ8L2I+PHN0cm9uZz7igrlfX188L3N0cm9uZz48L2Rpdj48L2Rpdj48cD7wn5KsIENvbnRhY3QgdXMgdG8gb3JkZXIgb3IgYXNrIGEgcXVlc3Rpb24uPC9wPjwvc2VjdGlvbj48c2VjdGlvbiBjbGFzcz0ic2hlZXQiPjxkaXYgY2xhc3M9InBvc3RlciI+PGRpdiBjbGFzcz0iYnJhbmQiIHN0eWxlPSJjb2xvcjojYjhmM2U3Ij5TUEVDSUFMIE9GRkVSPC9kaXY+PGgyPllPVVIgT0ZGRVIgSEVSRTwvaDI+PHA+R2V0IHVwIHRvIF9fJSBPRkYgb24gc2VsZWN0ZWQgcHJvZHVjdHMvc2VydmljZXM8L3A+PGRpdiBjbGFzcz0idGFnIj5MSU1JVEVEIFRJTUUgT0ZGRVI8L2Rpdj48cD7wn5OeICs5MSBYWFhYWCBYWFhYWCDigKIgQHlvdXJidXNpbmVzczwvcD48L2Rpdj48L3NlY3Rpb24+PC9kaXY+PC9ib2R5PjwvaHRtbD4=","study":"data:text/html;base64,PCFkb2N0eXBlIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT5FREIgU3R1ZGVudCBQbGFubmVyIFBhY2s8L3RpdGxlPgo8c3R5bGU+Cip7Ym94LXNpemluZzpib3JkZXItYm94fWJvZHl7bWFyZ2luOjA7YmFja2dyb3VuZDojZjFlZmZmO2ZvbnQtZmFtaWx5OkFyaWFsO2NvbG9yOiMyOTI1NGQ7cGFkZGluZzoyNXB4fS5wYWNre21heC13aWR0aDo5MDBweDttYXJnaW46YXV0b30uc2hlZXR7YmFja2dyb3VuZDojZmZmO2JvcmRlci1yYWRpdXM6MjJweDtwYWRkaW5nOjM1cHg7bWFyZ2luOjIycHggMDtib3gtc2hhZG93OjAgMTJweCAzNXB4ICMyOTI1NGQxODttaW4taGVpZ2h0OjQ1MHB4fS5icmFuZHtmb250LXNpemU6MTJweDtsZXR0ZXItc3BhY2luZzozcHg7Y29sb3I6IzZiNWJkNTtmb250LXdlaWdodDpib2xkfS50aXRsZXtmb250LXNpemU6NDBweDttYXJnaW46MTVweCAwfS5nb2Fse2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyIDFmcjtnYXA6MThweH0uYm94e2JvcmRlcjoycHggc29saWQgIzhiN2JlODtib3JkZXItcmFkaXVzOjE2cHg7cGFkZGluZzoxOHB4O21pbi1oZWlnaHQ6MTMwcHh9LmJveCBoM3ttYXJnaW4tdG9wOjA7Y29sb3I6IzU5NDliZH0ubGluZXtib3JkZXItYm90dG9tOjFweCBzb2xpZCAjYzljNGVkO2hlaWdodDozMHB4fS53ZWVre2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDcsMWZyKTtnYXA6N3B4fS5kYXl7Ym9yZGVyOjFweCBzb2xpZCAjYzljNGVkO2JvcmRlci1yYWRpdXM6MTBweDttaW4taGVpZ2h0OjE1MHB4O3BhZGRpbmc6OXB4fS5kYXkgYntjb2xvcjojNTk0OWJkfS50YXNre3BhZGRpbmc6MTNweDtib3JkZXItYm90dG9tOjFweCBzb2xpZCAjZGRkfS5xdW90ZXtiYWNrZ3JvdW5kOiNlZWVhZmQ7Ym9yZGVyLXJhZGl1czoxNXB4O3BhZGRpbmc6MjJweDtmb250LXN0eWxlOml0YWxpY31AbWVkaWEobWF4LXdpZHRoOjcwMHB4KXtib2R5e3BhZGRpbmc6OHB4fS5zaGVldHtwYWRkaW5nOjIycHh9LnRpdGxle2ZvbnQtc2l6ZTozMXB4fS5nb2Fse2dyaWQtdGVtcGxhdGUtY29sdW1uczoxZnJ9LndlZWt7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdCgyLDFmcil9fQo8L3N0eWxlPjwvaGVhZD48Ym9keT48ZGl2IGNsYXNzPSJwYWNrIj48c2VjdGlvbiBjbGFzcz0ic2hlZXQiPjxkaXYgY2xhc3M9ImJyYW5kIj5FQVNZIERJR0lUQUwgQlVERFkg4oCiIFNUVURFTlQgUExBTk5FUjwvZGl2PjxoMSBjbGFzcz0idGl0bGUiPk15IFN0dWR5IFBsYW5uZXI8L2gxPjxwPldlZWsgb2Y6IF9fX19fX19fX19fX19fX19fXzwvcD48ZGl2IGNsYXNzPSJnb2FsIj48ZGl2IGNsYXNzPSJib3giPjxoMz7wn46vIFRoaXMgV2VlaydzIEdvYWxzPC9oMz48cCBjbGFzcz0ibGluZSI+PC9wPjxwIGNsYXNzPSJsaW5lIj48L3A+PHAgY2xhc3M9ImxpbmUiPjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJib3giPjxoMz7wn5SlIE15IE1haW4gRm9jdXM8L2gzPjxwIGNsYXNzPSJsaW5lIj48L3A+PHAgY2xhc3M9ImxpbmUiPjwvcD48cCBjbGFzcz0ibGluZSI+PC9wPjwvZGl2PjwvZGl2Pjwvc2VjdGlvbj48c2VjdGlvbiBjbGFzcz0ic2hlZXQiPjxkaXYgY2xhc3M9ImJyYW5kIj5XRUVLTFkgU1RVRFkgUExBTjwvZGl2PjxoMj7wn5OaIFBsYW4gWW91ciBXZWVrPC9oMj48ZGl2IGNsYXNzPSJ3ZWVrIj48ZGl2IGNsYXNzPSJkYXkiPjxiPk1PTjwvYj48cCBjbGFzcz0ibGluZSI+PC9wPjxwIGNsYXNzPSJsaW5lIj48L3A+PC9kaXY+PGRpdiBjbGFzcz0iZGF5Ij48Yj5UVUU8L2I+PHAgY2xhc3M9ImxpbmUiPjwvcD48cCBjbGFzcz0ibGluZSI+PC9wPjwvZGl2PjxkaXYgY2xhc3M9ImRheSI+PGI+V0VEPC9iPjxwIGNsYXNzPSJsaW5lIj48L3A+PHAgY2xhc3M9ImxpbmUiPjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJkYXkiPjxiPlRIVTwvYj48cCBjbGFzcz0ibGluZSI+PC9wPjxwIGNsYXNzPSJsaW5lIj48L3A+PC9kaXY+PGRpdiBjbGFzcz0iZGF5Ij48Yj5GUkk8L2I+PHAgY2xhc3M9ImxpbmUiPjwvcD48cCBjbGFzcz0ibGluZSI+PC9wPjwvZGl2PjxkaXYgY2xhc3M9ImRheSI+PGI+U0FUPC9iPjxwIGNsYXNzPSJsaW5lIj48L3A+PHAgY2xhc3M9ImxpbmUiPjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJkYXkiPjxiPlNVTjwvYj48cCBjbGFzcz0ibGluZSI+PC9wPjxwIGNsYXNzPSJsaW5lIj48L3A+PC9kaXY+PC9kaXY+PC9zZWN0aW9uPjxzZWN0aW9uIGNsYXNzPSJzaGVldCI+PGRpdiBjbGFzcz0iYnJhbmQiPlRBU0sgVFJBQ0tFUjwvZGl2PjxoMj7inIUgTXkgSW1wb3J0YW50IFRhc2tzPC9oMj48ZGl2IGNsYXNzPSJ0YXNrIj7imJAgX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fPC9kaXY+PGRpdiBjbGFzcz0idGFzayI+4piQIF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXzwvZGl2PjxkaXYgY2xhc3M9InRhc2siPuKYkCBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX188L2Rpdj48ZGl2IGNsYXNzPSJ0YXNrIj7imJAgX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fPC9kaXY+PGRpdiBjbGFzcz0iYm94Ij48aDM+8J+TnSBOb3RlcyAmIElkZWFzPC9oMz48cCBjbGFzcz0ibGluZSI+PC9wPjxwIGNsYXNzPSJsaW5lIj48L3A+PHAgY2xhc3M9ImxpbmUiPjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJxdW90ZSI+U21hbGwgcHJvZ3Jlc3MgZXZlcnkgZGF5IGJlY29tZXMgYmlnIHByb2dyZXNzIG92ZXIgdGltZS48L2Rpdj48L3NlY3Rpb24+PC9kaXY+PC9ib2R5PjwvaHRtbD4="};
+function openProduct(id){
+  const p=PRODUCTS[id]; if(!p)return;
+  const file=PRODUCT_FILES[id];
+  $('#productDetails').innerHTML=`<div class="real-preview"><iframe src="${file}" title="${p.title} preview"></iframe></div><h2>${p.title}</h2><p class="muted">${p.type}</p><ul>${p.items.map(x=>`<li>${x}</li>`).join('')}</ul><div class="product-buy"><strong>${p.price}</strong><a class="btn" href="${file}" download>Download Template</a><button class="btn" onclick="openWhatsApp('product','${p.title}')">Order on WhatsApp</button></div><p class="tiny muted">The template file is included for preview/testing. For a paid customer order, confirm payment first and then deliver the purchased file.</p>`;
+  $('#productModal').classList.add('show');
+}
+function closeProduct(){$('#productModal').classList.remove('show')}
+
+const BUSINESS_WHATSAPP='918570865336';
+function openWhatsApp(type='general', product=''){
+  const messages={
+    general:'Hi! I want to know more about Easy Digital Buddy products and services.',
+    product:`Hi! I want to order this digital product: ${product}`,
+    custom:'Hi! I want to request a custom digital design/service from Easy Digital Buddy.',
+    website:'Hi! I am interested in getting a website/digital service made.'
+  };
+  window.open(`https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(messages[type]||messages.general)}`,'_blank','noopener,noreferrer');
+}
+function addWhatsAppButtons(){
+  document.querySelectorAll('[data-wa]').forEach(b=>{
+    b.onclick=()=>openWhatsApp(b.dataset.wa,b.dataset.product||'');
+  });
+}
+
+const langState={hi:false};
+function toggleLang(){langState.hi=!langState.hi;$('#langBtn').textContent=langState.hi?'EN':'हिं';$('#buddyGreeting').textContent=langState.hi?'नमस्ते! मैं ED Buddy हूँ 👋':'Hi! I’m ED Buddy 👋';$('#buddyRotating').textContent=langState.hi?'Tool खोजो। Skill सीखो। Online safe रहो।':'Find a tool. Learn a skill. Stay safe online.'}
+const paths={
+ study:{title:'📚 Study Path',steps:[['Percentage Calculator','tool/percentage'],['Study Timer','tool/study-timer'],['Notes','tool/notes'],['To-Do List','tool/todo']]},
+ earning:{title:'💰 Online Earning Path',steps:[['Choose a skill','earning'],['Build a practice project','tool/text-cleaner'],['Track your progress','dashboard'],['Learn scam safety','safety']]},
+ safety:{title:'🔐 Safety Path',steps:[['Check password strength','tool/password-check'],['Generate a strong password','tool/password-gen'],['Check suspicious text','tool/phishing'],['Review privacy checklist','tool/privacy']]},
+ digital:{title:'📱 Digital Help Path',steps:[['Find the right tool','home'],['Convert or calculate','category/tools'],['Create a QR code','tool/qr-gen'],['Save useful notes','tool/notes']]}
+};
+function openWizard(key){let p=paths[key];let e=$('#wizardBox');if(!e)return;e.innerHTML=`<h3>${p.title}</h3><p class="muted">Follow these steps:</p>`+p.steps.map((s,i)=>`<div class="wizard-step" onclick="wizardGo('${s[1]}')"><b>${i+1}</b><span>${s[0]}</span><span style="margin-left:auto">→</span></div>`).join('')}
+function wizardGo(path){if(path==='dashboard'){renderDashboard();return}if(path==='earning'||path==='safety'){alert('This learning path is available as an educational roadmap. Explore the Online Earning or Online Safety category.');return}go(path)}
+function openWorkflow(key){let data={freelance:['💼 Start Freelancing',['Choose a skill','Practice with a small project','Create a portfolio','Learn safe earning basics']],content:['📸 Create Digital Content',['Generate an idea','Clean or write text','Resize/compress an image','Create a QR code']],safety:['🛡️ Secure Your Account',['Check password strength','Generate a unique password','Review privacy settings','Learn phishing warning signs']]}[key];$('#wizardBox').innerHTML=`<h3>${data[0]}</h3>`+data[1].map((x,i)=>`<div class="wizard-step"><b>${i+1}</b><span>${x}</span><span style="margin-left:auto">✓</span></div>`).join('');window.scrollTo({top:document.querySelector('#wizardBox').offsetTop-80,behavior:'smooth'})}
+function renderDashboard(){let e=$('#dashboardBox');if(!e)return;let notes=JSON.parse(localStorage.getItem('edb-notes')||'[]').length,todos=JSON.parse(localStorage.getItem('edb-todos')||'[]'),done=todos.filter(x=>x.done).length,recent=recentIds().length;e.innerHTML=`<div class="dashboard-item"><b>${recent}</b><span>Recent tools</span></div><div class="dashboard-item"><b>${notes}</b><span>Saved notes</span></div><div class="dashboard-item"><b>${todos.length}</b><span>Total tasks</span></div><div class="dashboard-item"><b>${done}</b><span>Completed tasks</span></div>`}
+function initDynamic(){renderDashboard();addWhatsAppButtons();let phrases=['Find a tool. Learn a skill. Stay safe online.','Calculate anything. Create anything.','Your digital journey starts here.','Learn • Create • Protect • Grow'];let i=0;setInterval(()=>{let e=$('#buddyRotating');if(e){i=(i+1)%phrases.length;e.style.opacity='0';setTimeout(()=>{e.textContent=phrases[i];e.style.opacity='1'},250)}},3000)}
+function searchTools(q){let box=$('#searchResults');if(!box)return;let s=q.trim().toLowerCase();if(!s){box.innerHTML='';return}let found=tools.filter(t=>(t.name+' '+t.desc+' '+catById(t.cat).name).toLowerCase().includes(s));box.innerHTML=`<div class="section-title"><h2>Search Results</h2></div>${found.length?'<div class="grid">'+found.map(toolCard).join('')+'</div>':'<div class="noresults">No results found. Try another tool name, category or keyword.</div>'}`}
+function go(path){if(path.startsWith('tool/'))addRecent(path.split('/')[1]);if(path==='home'){history.pushState({},'', '#home');app.innerHTML=home();applyTheme();setTimeout(initDynamic,50);window.scrollTo(0,0);return}let [type,id]=path.split('/');history.pushState({},'', '#'+path);app.innerHTML=type==='category'?category(id):toolPage(id);window.scrollTo(0,0)}
+window.onpopstate=()=>{let p=location.hash.slice(1)||'home';go(p)};
+app.innerHTML=home();applyTheme();setTimeout(initDynamic,50);
+</script>
+
+<a class="floating-wa" href="javascript:openWhatsApp('general')" aria-label="Contact on WhatsApp">💬</a>
+
+<script>
+/* ===== EASY DIGITAL BUDDY: UNIQUE INTERACTION SYSTEM ===== */
+(function(){
+  const toast=(msg)=>{const el=document.getElementById('edbToast');if(!el)return;el.textContent=msg;el.classList.add('show');clearTimeout(window._edbToast);window._edbToast=setTimeout(()=>el.classList.remove('show'),2400)};
+  window.edbToast=toast;
+  window.openCommand=()=>{document.getElementById('edbCommand').classList.add('show');const i=document.getElementById('edbCommandInput');i.value='';renderCommandResults('');setTimeout(()=>i.focus(),50)};
+  window.closeCommand=()=>document.getElementById('edbCommand').classList.remove('show');
+  window.renderCommandResults=(q='')=>{
+    const box=document.getElementById('edbCommandResults'); if(!box)return;
+    const items=(window.ALL_TOOLS_REGISTRY||[]).filter(x=>(x.name+' '+x.category+' '+(x.description||'')).toLowerCase().includes(q.toLowerCase())).slice(0,12);
+    box.innerHTML=items.length?items.map(x=>`<div class="edb-command-item" onclick="closeCommand();go('${x.category||'home'}')"><span>⚡</span><div><b>${x.name}</b><small>${x.category||'Tool'}</small></div></div>`).join(''):'<div class="edb-command-item">🔎 No matching tool found</div>';
+  };
+  document.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openCommand()}
+    if(e.key==='Escape')closeCommand();
+  });
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    const p=(window.scrollY/(h.scrollHeight-h.clientHeight))*100;
+    const bar=document.getElementById('edbProgress'); if(bar)bar.style.width=Math.max(0,Math.min(100,p))+'%';
+  });
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+  window.edbObserve=()=>document.querySelectorAll('.edb-reveal').forEach(x=>observer.observe(x));
+  window.edbAddSmartEffects=()=>{
+    document.querySelectorAll('.product-card,.service-card,.tool-card,.category-card').forEach(x=>x.classList.add('edb-reveal'));
+    edbObserve();
+  };
+  window.addEventListener('load',()=>{setTimeout(edbAddSmartEffects,300)});
+})();
+</script>
+<button class="edb-command-trigger" onclick="openCommand()" title="Quick Search (Ctrl+K)" style="position:fixed;right:84px;bottom:22px;width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:var(--panel);color:var(--text);z-index:50;font-size:20px">⌘</button></body>
+</html>
